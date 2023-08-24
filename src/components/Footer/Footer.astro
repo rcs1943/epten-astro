@@ -1,45 +1,54 @@
+---
+import LogoSection from './components/LogoSection.astro'
+import MediaSection from './components/MediaSection.astro'
+import InfoSection from './components/InfoSection.astro'
+---
+
+
 <footer id="main-footer">
     <section class="wrapper">
-        <article class="logo-section">
-            <img src="public/img/EPTEN_LOGO.png" alt="EPTEN Logo" />
-            <div class="phone-number">
-                <iconify-icon icon="akar-icons:phone"></iconify-icon>
-                <span>958634825</span>
-            </div>
-        </article>
-        <article class="buttons-section">
-            <a href="./inscripcion" class="button">Inscríbete</a>
-            <div class="icons">
-                <a href="https://wa.me/+51958634825" target="_blank">
-                    <iconify-icon
-                        icon="akar-icons:whatsapp-fill"
-                    ></iconify-icon>
-                </a>
-                <a
-                    href="https://www.facebook.com/eptenn"
-                    target="_blank"
-                >
-                    <iconify-icon icon="ei:sc-facebook"> </iconify-icon>
-                </a>
-                <a
-                    href="https://www.instagram.com/eptensac/"
-                    target="_blank"
-                >
-                    <iconify-icon
-                        icon="akar-icons:instagram-fill"
-                    ></iconify-icon>
-                </a>
-            </div>
-        </article>
-        <article class="info-section">
-            <h3>INFORMACIÓN</h3>
-            <ul>
-                <li><a href="./cursos">Nuestros cursos</a></li>
-                <li><a href="./nosotros">Conócenos</a></li>
-                <li><a href="#">Política de privacidad</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-            </ul>
-        </article>
+        <LogoSection />
+        <MediaSection />
+        <InfoSection />
     </section>
-    <footer>Todos los derechos reservados Ⓒ 2023 - EPTEN S.A.C.</footer>
+    <footer id="sub-footer">Todos los derechos reservados Ⓒ 2023 - EPTEN S.A.C.</footer>
 </footer>
+
+<style lang="scss">
+    #main-footer {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary);
+    }
+    #main-footer :global(a) {
+        text-decoration: none;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+        gap: 200px;
+        @media (max-width: 1170px) {
+            gap: 100px;
+        }
+        @media (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        > :global(article) {
+            width: 20%;
+            @media (max-width: 900px) {
+                width: 100%;
+            }
+        }
+    }
+    #sub-footer {
+        background-color: #000000;
+        color: var(--white);
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+</style>
+    

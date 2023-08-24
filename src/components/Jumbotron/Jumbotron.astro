@@ -1,0 +1,23 @@
+---
+interface JumbotronProps {
+    title: string;
+}
+
+const { title } = Astro.props as JumbotronProps;
+---
+
+<section id="jumbotron">
+    <img
+        src="/public/img/nosotros/ABOUTUS_HERO.jpg"
+        alt="Jumbotron Nosotros"
+    />
+    <h1>
+        <span>SOBRE</span>
+        <span>EPTEN</span>
+    </h1>
+    <div class="ornament">
+        <div class="blue50"></div>
+        <div class="blue75"></div>
+        <div class="blue50"></div>
+    </div>
+</section>

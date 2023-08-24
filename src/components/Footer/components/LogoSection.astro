@@ -1,0 +1,33 @@
+<article id="logo-section">
+    <img src="/images/EPTEN_LOGO.png" alt="EPTEN Logo" />
+    <div class="phone-number">
+        <iconify-icon icon="akar-icons:phone"></iconify-icon>
+        <span>958634825</span>
+    </div>
+</article>
+
+<style lang="scss">
+    #logo-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: var(--fifth-color);
+        @media (max-width: 900px) {
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            background-color: var(--white);
+            border-radius: 50%;
+            padding: 15px;
+            width: 200px;
+        }
+        .phone-number {
+            margin-left: 10px;
+            font-size: 18px;
+            @media (max-width: 900px) {
+                margin-left: 0;
+            }
+        }
+    }
+</style>
