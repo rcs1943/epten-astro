@@ -1,0 +1,20 @@
+---
+interface DividerProps {
+    pixels: string;
+    mobilePixels?: string | false;
+}
+const { pixels, mobilePixels = pixels } = Astro.props as DividerProps;
+console.log(mobilePixels)
+---
+
+<div />
+
+<style define:vars={{ pixels, mobilePixels }}>
+    div {
+        height: var(--pixels);
+        @media (max-width: 650px) {
+            height: var(--mobilePixels)
+        }
+    }
+</style>
+

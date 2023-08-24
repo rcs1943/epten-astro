@@ -1,8 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Jumbotron from "../components/Jumbotron/Jumbotron.astro"
+import PresentationBox from "../components/PresentationBox/PresentationBox.astro"
+import Divider from "../components/Divider/Divider.astro"
+import InfoSchema from "../components/InfoSchema/InfoSchema.astro"
 
+import { VISION, MISSION, PRESENTATION_BOX } from "../constants/nosotros"
 ---
 
 <Layout title="EPTEN - Nosotros">
-    <h1>Hola</h1>
+    <Jumbotron title="SOBRE EPTEN" imagePath="/images/ABOUTUS_HERO.jpg" />
+    <Divider pixels="40px" />
+    <PresentationBox content={PRESENTATION_BOX.content} cardList={PRESENTATION_BOX.cardList} />
+    <Divider pixels="100px" mobilePixels="90px" />
+    <InfoSchema topTitle={MISSION.topTitle} bottomTitle={MISSION.bottomTitle} content={MISSION.content} />
+    <Divider pixels="150px" mobilePixels="90px" />
+    <InfoSchema topTitle={VISION.topTitle} bottomTitle={VISION.bottomTitle} content={VISION.content} />
 </Layout>

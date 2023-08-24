@@ -1,19 +1,20 @@
 ---
 interface JumbotronProps {
     title: string;
+    imagePath: string;
 }
 
-const { title } = Astro.props as JumbotronProps;
+const { title, imagePath } = Astro.props as JumbotronProps;
 ---
 
-<section id="jumbotron">
+<section class="jumbotron">
     <img
-        src="/public/img/nosotros/ABOUTUS_HERO.jpg"
+        src={imagePath}
         alt="Jumbotron Nosotros"
     />
     <h1>
-        <span>SOBRE</span>
-        <span>EPTEN</span>
+        <span>{title.split(' ')[0]}</span>
+        <span>{title.split(' ')[1]}</span>
     </h1>
     <div class="ornament">
         <div class="blue50"></div>
@@ -21,3 +22,117 @@ const { title } = Astro.props as JumbotronProps;
         <div class="blue50"></div>
     </div>
 </section>
+
+<style lang="scss">
+    .jumbotron {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 465px;
+        max-width: 1920px;
+        text-align: center;
+        background: url("") no-repeat center;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        @media (max-width: 1024px) {
+            min-height: 325px;
+        }
+        &::before {
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: inherit;
+            background-color: var(--primary);
+            opacity: 0.3;
+            z-index: 2;
+            @media (max-width: 1024px) {
+                display: block;
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: inherit;
+                background-color: #012169;
+                opacity: 0.5;
+                z-index: 1;
+            }
+            @media (max-width: 765px) {
+                opacity: 0.8;
+            }
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        h1 {
+            display: flex;
+            flex-direction: column;
+            color: var(--white);
+            font-size: 70px;
+            z-index: 2;
+            @media (max-width: 765px) {
+                font-size: 60px;
+            }
+            @media (max-width: 500px) {
+                font-size: 45px;
+            }
+            & span:first-child {
+                font-weight: 400;
+                font-size: 60px;
+                @media (max-width: 765px) {
+                    font-size: 50px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+    .ornament {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        rotate: 115deg;
+        left: 50%;
+        translate: -50%;
+        top: 0px;
+        @media (max-width: 1024px) {
+            left: 47%;
+        }
+        @media (max-width: 765px) {
+            display: none;
+        }
+        .blue50 {
+            background-color: var(--primary);
+            width: 1000px;
+            height: 50px;
+            opacity: 0.5;
+            @media (max-width: 1024px) {
+                height: 40px;
+            }
+        }
+        .blue75 {
+            background-color: var(--primary);
+            width: 1000px;
+            height: 500px;
+            opacity: 0.75;
+            @media (max-width: 1024px) {
+                height: 400px;
+            }
+        }
+    }
+
+</style>

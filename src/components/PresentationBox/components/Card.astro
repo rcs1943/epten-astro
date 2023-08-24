@@ -1,0 +1,47 @@
+---
+interface CardProps {
+    iconPath: string;
+    content?: string;
+}
+const { iconPath, content } = Astro.props as CardProps;
+---
+
+<div class="card">
+    <img
+        src={iconPath}
+        alt="Icono Presentación"
+    />
+    <h4>
+        {content ? content : <br><br>}
+    </h4>
+</div>
+
+<style lang="scss">
+    .card {
+        background-color: var(--white);
+        color: var(--primary);
+        text-align: center;
+        padding: 30px 15px;
+        position: relative;
+        img {
+            @media (max-width: 600px) {
+                width: 50px;
+            }
+        }
+        h4 {
+            margin-top: 15px;
+            @media (max-width: 600px) {
+                font-size: 12px;
+            }
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--fifth-color);
+        }
+    }
+</style>

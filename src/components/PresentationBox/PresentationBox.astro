@@ -1,0 +1,99 @@
+---
+import Card from './components/Card.astro'
+interface PresentationBox {
+    title?: string;
+    content: string;
+    cardList: {
+        iconPath: string;
+        content: string;
+    }[];
+    button?: {
+        linkPath: string;
+        content?: string;
+    }
+}
+const { title, content, cardList, button } = Astro.props as PresentationBox;
+---
+<section class="presentation-box">
+    <article class="wrapper">
+        {title && <h2>{title}</h2>}
+        <p>
+            {content}
+        </p>
+        <div class="cards-wrapper">
+            {cardList.map((card, idx) => 
+                <Card key={idx} iconPath={card.iconPath} content={card.content} />)}
+        </div>
+        {button && 
+            <div class="link-btn-wrapper">
+                <a href={button.linkPath}>{button.content}</a>
+            </div>}
+    </article>
+</section>
+
+<style lang="scss">
+    .presentation-box {
+        width: 100%;
+        max-width: 1920px;
+        background-color: var(--primary);
+        padding: 50px 0;
+    }
+    .wrapper {
+        margin: 0 auto 0;
+        width: calc(100% - 2rem);
+        max-width: 960px;
+        color: var(--white);
+        @media (max-width: 1280px) {
+            width: 80%;
+        }
+        @media (max-width: 850px) {
+            width: 86%;
+        }
+        @media (max-width: 650px) {
+            width: 90%;
+            font-size: 22px;
+            line-height: 30px;
+        }
+        h2 {
+            font-size: 48px;
+            @media (max-width: 850px) {
+                font-size: 50px;
+            }
+        }
+        p {
+            font-size: 24px;
+            line-height: 35px;
+            margin-top: 0;
+            text-align: center;
+            @media (max-width: 600px) {
+                font-size: 18px;
+            }
+        }
+    }
+    .cards-wrapper {
+        display: grid;
+        place-content: center;
+        grid-template-columns: repeat(auto-fill, 217.5px);
+        gap: 30px;
+        margin-top: 50px;
+    }
+    .link-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+        a {
+            text-decoration: none;
+            border: 4px solid var(--fifth-color);
+            color: var(--white);
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: 600;
+            transition: 0.3s;
+            &:hover {
+                border: 4px solid var(--fifth-color);
+                background-color: var(--black);
+                color: var(--fifth-color);
+            }
+        }
+    }
+</style>
