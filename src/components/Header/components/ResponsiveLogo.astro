@@ -1,0 +1,38 @@
+<div id="responsive-logo">
+    <a href="./">
+        <img src="../../../public/images/EPTEN_LOGO.png" alt="EPTEN Logo" />
+        <h1>
+            Escuela Peruana de Tecnología,
+            <br />
+            Emprendimiento y Negocios
+        </h1>
+    </a>
+</div>
+
+<style lang="scss">
+    #responsive-logo {
+        display: none;
+        @media (max-width: 900px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h1 {
+                color: var(--primary);
+                font-size: 26px;
+                text-align: center;
+                @media (max-width: 600px) {
+                    font-size: 17px;
+                }
+            }
+        }
+        img {
+            width: 100px;
+        }
+    }
+</style>
