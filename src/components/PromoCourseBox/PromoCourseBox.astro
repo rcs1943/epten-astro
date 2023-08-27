@@ -1,0 +1,56 @@
+---
+import AnimatedButton from "../CustomButtons/AnimatedButton.astro";
+interface PromoCoursesBoxProps {
+    courseName: string;
+    schedule: string;
+    startDate: string;
+    imagePath: string;
+    key: number;
+}
+const { courseName, schedule, startDate, imagePath, key } = Astro.props as PromoCoursesBoxProps;
+---
+
+<div id="container">
+    <img src={imagePath} alt="Imagen Curso Del Mes" style={{order: key % 2 === 0 ? 0 : 1}}}>
+    <div class="info">
+        <h2>{courseName}</h2>
+        <h3>Horario:</h3>
+        <p>{schedule}</p>
+        <h3>Inicio:</h3>
+        <p>{startDate}</p>
+        <div class="button-wrapper">
+            <AnimatedButton content="Más información aquí" path="./inscripcion" />
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    #container {
+        display: flex;
+        background-color: var(--primary);
+        width: 100%;
+    }
+    img {
+        display: flex;
+        justify-content: flex-end;
+        width: 600px;
+        min-height: 400px;
+    }
+    .info {
+        padding: 50px;
+        color: var(--white);
+        width: 100%;
+        h2 {
+            color: var(--fifth-color);
+        }
+        h3 {
+            margin-top: 20px;
+        }
+    }
+    .button-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+</style>

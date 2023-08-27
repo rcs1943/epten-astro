@@ -1,0 +1,27 @@
+---
+interface TitleHeaderMiniProps {
+    title: string;
+}
+const { title } = Astro.props as TitleHeaderMiniProps;
+---
+
+<header>
+    <h2>{title}</h2>
+</header>
+
+<style lang="scss">
+    header {
+        border-top: 6px solid var(--fifth-color);
+        width: 100%;
+        max-width: 1250px;
+        h2 {
+            color: var(--gray-1);
+            margin-top: 20px;
+            font-size: 32px;
+            font-weight: 600;
+            @media (max-width: 850px) {
+                font-size: 26px;
+            }
+        }
+    }
+</style>

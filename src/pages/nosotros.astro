@@ -4,11 +4,13 @@ import Jumbotron from "../components/Jumbotron/Jumbotron.astro"
 import PresentationBox from "../components/PresentationBox/PresentationBox.astro"
 import Divider from "../components/Divider/Divider.astro"
 import InfoSchema from "../components/InfoSchema/InfoSchema.astro"
+import TitleHeaderMini from "../components/TitleHeaders/MiniTitleHeader.astro"
+import ValueList from "../components/Nosotros/ValueList/ValueList"
 
-import { VISION, MISSION, PRESENTATION_BOX } from "../constants/nosotros"
+import { VISION, MISSION, PRESENTATION_BOX, VALUE_CARDS } from "../utils/constants/nosotros"
 ---
 
-<Layout title="EPTEN - Nosotros">
+<Layout>
     <Jumbotron title="SOBRE EPTEN" imagePath="/images/ABOUTUS_HERO.jpg" />
     <Divider pixels="40px" />
     <PresentationBox content={PRESENTATION_BOX.content} cardList={PRESENTATION_BOX.cardList} />
@@ -16,4 +18,24 @@ import { VISION, MISSION, PRESENTATION_BOX } from "../constants/nosotros"
     <InfoSchema topTitle={MISSION.topTitle} bottomTitle={MISSION.bottomTitle} content={MISSION.content} />
     <Divider pixels="150px" mobilePixels="90px" />
     <InfoSchema topTitle={VISION.topTitle} bottomTitle={VISION.bottomTitle} content={VISION.content} />
+    <section id="values-section">
+        <TitleHeaderMini title="Nuestros Valores" />
+        <ValueList values={VALUE_CARDS} client:only />
+    </section>
 </Layout>
+
+<style lang="scss">
+    #values-section {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 4rem);
+        max-width: 1250px;
+        gap: 70px;
+        margin: 120px 0 100px;
+        @media (max-width: 650px) {
+            width: calc(100% - 2rem);
+            margin: 80px 0;
+            gap: 50px;
+        }
+    }
+</style>

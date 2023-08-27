@@ -1,0 +1,27 @@
+---
+interface MainTitleHeaderProps {
+    preTitle?: string;
+    boldTitle: string;
+    postTitle?: string;
+}
+const { preTitle, boldTitle, postTitle } = Astro.props as MainTitleHeaderProps;
+---
+
+<header>
+    <h2>{preTitle} <b>{boldTitle}</b> {postTitle}</h2>
+</header>
+
+<style lang="scss">
+    header {
+        background-color: var(--primary);
+        padding: 30px 50px 30px 0;
+        text-align: end;
+        box-shadow: 15px -15px var(--fifth-color);
+        width: 100%;
+        h2 {
+            color: var(--white);
+            font-weight: 400;
+            font-size: 45px;
+        }
+    }
+</style>

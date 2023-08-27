@@ -1,0 +1,19 @@
+.screenList {
+    display: flex;
+    @media (max-width: 650px) {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    width: unset;
+    @media (max-width: 650px) {
+        gap: 30px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+}
