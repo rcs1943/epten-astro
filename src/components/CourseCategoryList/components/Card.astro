@@ -1,0 +1,65 @@
+---
+import AnimatedButton from '../../CustomButtons/AnimatedButton.astro'
+
+interface CardProps {
+    title: string;
+    linkPath: string;
+    imgPath: string;
+}
+const { title, linkPath, imgPath } = Astro.props as CardProps;
+---
+<div class="card">
+    <a href={linkPath}><h3>{title}</h3></a>
+    <div class="button-wrapper">
+        <AnimatedButton content="Más información" path={linkPath} />
+    </div>
+    <a href={linkPath}>
+        <img
+            src={imgPath}
+            alt="Imagen Categoría"
+        />
+    </a>
+</div>
+
+<style lang="scss">
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #02abee;
+        overflow: hidden;
+        border-radius: 5px;
+        width: 45%;
+        &:hover .button-wrapper {
+            right: -10px;
+            transition: right 0.2s ease-in-out 0s;
+        }
+        h3 {
+            position: absolute;
+            width: 100%;
+            padding: 20px 15px;
+            color: var(--white);
+            background-image: linear-gradient(
+                to top,
+                transparent,
+                rgba(0, 0, 0, 0.45) 1.75rem
+            );
+            text-shadow: 0 0 1rem #000;
+            font-size: 22px;
+        }
+        a {
+            cursor: pointer;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .button-wrapper {
+        display: flex;
+        position: absolute;
+        bottom: 10%;
+        right: -180px;
+        transition: right 0.2s ease-out 0.25s;
+    }
+</style>
