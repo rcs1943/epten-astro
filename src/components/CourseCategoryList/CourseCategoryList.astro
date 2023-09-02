@@ -5,20 +5,24 @@ interface CourseCategoryListProps {
         title: string;
         linkPath: string;
         imgPath: string;
-    }[]
+    }[];
 }
 const { categoryCards } = Astro.props as CourseCategoryListProps;
 ---
 
 <article id="container">
     <div class="card-list">
-        {categoryCards.map(({title, linkPath, imgPath}) => 
-            <Card 
-                key={title}
-                title={title}
-                linkPath={linkPath}
-                imgPath={imgPath} />)}
-    </div>  
+        {
+            categoryCards.map(({ title, linkPath, imgPath }) => (
+                <Card
+                    key={title}
+                    title={title}
+                    linkPath={linkPath}
+                    imgPath={imgPath}
+                />
+            ))
+        }
+    </div>
 </article>
 
 <style lang="scss">
@@ -38,6 +42,13 @@ const { categoryCards } = Astro.props as CourseCategoryListProps;
             right: 0;
             box-sizing: inherit;
             z-index: -1;
+            @media (max-width: 820px) {
+                bottom: -50px;
+                height: 300px;
+            }
+            @media (max-width: 600px) {
+                height: 480px;
+            }
         }
         &::after {
             border-bottom: 8px solid var(--primary);
@@ -51,6 +62,21 @@ const { categoryCards } = Astro.props as CourseCategoryListProps;
             right: -25px;
             box-sizing: inherit;
             z-index: -1;
+            @media (max-width: 820px) {
+                bottom: -30px;
+                height: 400px;
+            }
+            @media (max-width: 600px) {
+                height: 620px;
+                left: -20px;
+                right: -20px;
+            }
+        }
+        @media (max-width: 1300px) {
+            width: 70%;
+        }
+        @media (max-width: 820px) {
+            width: 85%;
         }
     }
     .card-list {

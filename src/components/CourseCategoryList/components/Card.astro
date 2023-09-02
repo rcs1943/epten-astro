@@ -1,5 +1,5 @@
 ---
-import AnimatedButton from '../../CustomButtons/AnimatedButton.astro'
+import AnimatedButton from "../../CustomButtons/AnimatedButton.astro";
 
 interface CardProps {
     title: string;
@@ -8,16 +8,14 @@ interface CardProps {
 }
 const { title, linkPath, imgPath } = Astro.props as CardProps;
 ---
+
 <div class="card">
     <a href={linkPath}><h3>{title}</h3></a>
     <div class="button-wrapper">
         <AnimatedButton content="Más información" path={linkPath} />
     </div>
     <a href={linkPath}>
-        <img
-            src={imgPath}
-            alt="Imagen Categoría"
-        />
+        <img src={imgPath} alt="Imagen Categoría" />
     </a>
 </div>
 
@@ -31,8 +29,13 @@ const { title, linkPath, imgPath } = Astro.props as CardProps;
         border-radius: 5px;
         width: 45%;
         &:hover .button-wrapper {
-            right: -10px;
-            transition: right 0.2s ease-in-out 0s;
+            @media (min-width: 601px) {
+                right: -10px;
+                transition: right 0.2s ease-in-out 0s;
+            }
+        }
+        @media (max-width: 820px) {
+            width: 85%;
         }
         h3 {
             position: absolute;
@@ -61,5 +64,15 @@ const { title, linkPath, imgPath } = Astro.props as CardProps;
         bottom: 10%;
         right: -180px;
         transition: right 0.2s ease-out 0.25s;
+        @media (max-width: 600px) {
+            right: 50%;
+            translate: 50%;
+            text-align: center;
+            width: 70%;
+        }
+        @media (max-width: 500px) {
+            width: 80%;
+            transition: none;
+        }
     }
 </style>

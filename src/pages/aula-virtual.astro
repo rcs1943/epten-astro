@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <section id="work-in-progress">
+        <div class="img-wrapper">
+            <img
+                src="/public/images/WORK_IN_PROGRESS.png"
+                alt="Work in progress"
+            />
+        </div>
+        <h1>Nuestra <b>Aula Virtual</b> está en proceso</h1>
+    </section>
+</Layout>
+
+<style lang="scss">
+    #work-in-progress {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0 100px;
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            font-weight: 500;
+            @media (max-width: 600px) {
+                margin: 0 20px;
+            }
+        }
+        b {
+            color: var(--secondary);
+        }
+    }
+    .img-wrapper {
+        margin: 0 auto 0;
+        width: calc(100% - 16rem);
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+    }
+</style>

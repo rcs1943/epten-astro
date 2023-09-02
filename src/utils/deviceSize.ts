@@ -10,6 +10,6 @@ const handleResize = (): void => {
 
 window.addEventListener("resize", handleResize);
 
-export const getIsResponsive = (): boolean => {
+export const getIsMobile = (): boolean => {
     return isResponsive;
 };

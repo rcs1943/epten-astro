@@ -18,10 +18,28 @@ const { preTitle, boldTitle, postTitle } = Astro.props as MainTitleHeaderProps;
         text-align: end;
         box-shadow: 15px -15px var(--fifth-color);
         width: 100%;
+        @media (max-width: 1280px) {
+            text-align: center;
+            padding: 30px 10px;
+            font-size: 45px;
+        }
+        @media (max-width: 600px) {
+            padding: 20px 10px 20px 10px;
+            box-shadow: 10px -15px var(--fifth-color);
+        }
         h2 {
             color: var(--white);
             font-weight: 400;
             font-size: 45px;
+            @media (max-width: 1280px) {
+                font-size: 45px;
+            }
+            @media (max-width: 600px) {
+                font-size: 34px;
+            }
+            @media (max-width: 500px) {
+                font-size: 27px;
+            }
         }
     }
 </style>

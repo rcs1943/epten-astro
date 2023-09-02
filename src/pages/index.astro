@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import MainTitleHeader from '../components/TitleHeaders/MainTitleHeader.astro';
 import PromoCourseBox from '../components/PromoCourseBox/PromoCourseBox.astro';
 import CourseCategoryList from '../components/CourseCategoryList/CourseCategoryList.astro'
-import { CATEGORY_CARDS, PROMO_COURSES } from '../utils/constants';
+import PresentationBox from '../components/PresentationBox/PresentationBox.astro';
+import InfoSchema from "../components/InfoSchema/InfoSchema.astro"
+import { CATEGORY_CARDS, NEXT_STEP_INFO, PRESENTATION_BOX, PROMO_COURSES } from '../utils/constants';
+import Divider from '../components/Divider/Divider.astro';
 ---
 
 <Layout>
@@ -27,6 +30,19 @@ import { CATEGORY_CARDS, PROMO_COURSES } from '../utils/constants';
         </article>
         <CourseCategoryList categoryCards={CATEGORY_CARDS} />
     </section>
+    <PresentationBox 
+        title={PRESENTATION_BOX.title} 
+        content={PRESENTATION_BOX.content}
+        cardList={PRESENTATION_BOX.cardList}
+        button={PRESENTATION_BOX.button} />
+    <Divider pixels="100px" />
+    <InfoSchema 
+        topTitle={NEXT_STEP_INFO.topTitle} 
+        bottomTitle={NEXT_STEP_INFO.bottomTitle}
+        linebreak={true}
+        content={NEXT_STEP_INFO.content}
+        button={NEXT_STEP_INFO.button} />
+    <Divider pixels="100px"/>
 </Layout>
 
 <style lang="scss">
@@ -42,6 +58,9 @@ import { CATEGORY_CARDS, PROMO_COURSES } from '../utils/constants';
             display: flex;
             flex-direction: column;
             gap: 70px;
+            @media (max-width: 650px) {
+                gap: 40px;
+            }
         }
     }
     #categories-section {
@@ -54,7 +73,11 @@ import { CATEGORY_CARDS, PROMO_COURSES } from '../utils/constants';
         gap: 60px;
     }
     .title-wrapper {
+        display: flex;
         width: 65%;
         max-width: 950px;
+        @media (max-width: 600px) {
+            width: 98%;
+        }
     }
 </style>

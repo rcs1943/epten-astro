@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
 .screenList {
     display: flex;
     @media (max-width: 650px) {

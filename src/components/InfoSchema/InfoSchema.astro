@@ -1,20 +1,22 @@
 ---
-interface InfoSchemaProps {
+export interface InfoSchemaProps {
     topTitle: string;
     bottomTitle: string;
+    linebreak?: boolean;
     content: string;
     button?: {
         linkPath: string;
         content: string;
     }
 }
-const { topTitle, bottomTitle, content, button } = Astro.props as InfoSchemaProps;
+const { topTitle, bottomTitle, linebreak = false, content, button } = Astro.props as InfoSchemaProps;
 ---
 
 <article class="info-schema">
     <div class="title-container">
         <h2>
             <span>{topTitle}</span>
+            {linebreak && <br>}
             <b>{bottomTitle}</b>
         </h2>
     </div>
@@ -26,7 +28,6 @@ const { topTitle, bottomTitle, content, button } = Astro.props as InfoSchemaProp
             {button && <a href={button.linkPath}>{button.content}</a>}
         </div>
     </div>
-
 </article>
 
 <style lang="scss">
@@ -47,7 +48,7 @@ const { topTitle, bottomTitle, content, button } = Astro.props as InfoSchemaProp
             width: calc(100% - 3rem);
         }
         h2 {
-            font-size: 70px;
+            font-size: 60px;
             color: var(--primary);
             background-color: var(--white);
             margin-top: -33px;
@@ -62,10 +63,19 @@ const { topTitle, bottomTitle, content, button } = Astro.props as InfoSchemaProp
                 font-size: 35px;
                 padding: 0 10px;
             }
+            @media (max-width: 500px) {
+                font-size: 23px;
+                padding: 0 5px;
+            }
         }
         span {
             @media (max-width: 500px) {
                 display: block;
+            }
+        }
+        br {
+            @media (max-width: 500px) {
+                display: none;
             }
         }
     }
@@ -74,10 +84,11 @@ const { topTitle, bottomTitle, content, button } = Astro.props as InfoSchemaProp
         background-image: url(/images/HERO_OVERLAY.jpg);
         background-size: cover;
         p {
-            width: 52%;
+            width: 70%;
             font-size: 27px;
             line-height: 50px;
             color: var(--white);
+            margin: 27px 0;
             @media (max-width: 1024px) {
                 width: 90%;
             }
@@ -116,7 +127,10 @@ const { topTitle, bottomTitle, content, button } = Astro.props as InfoSchemaProp
         border-top: 0;
         margin: 0 auto 0;
         width: calc(100% - 3rem);
-        max-width: 1280px;
+        max-width: 960px;
+        @media (min-width: 1441px) {
+            max-width: 1280px;
+        }
         @media (max-width: 650px) {
             gap: 15px;
         }

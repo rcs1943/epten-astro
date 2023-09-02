@@ -1,3 +1,6 @@
+import type { InfoSchemaProps } from "../../components/InfoSchema/InfoSchema.astro";
+import type { PresentationBox } from "../../components/PresentationBox/PresentationBox.astro";
+
 export const PROMO_COURSES = [
     {
         courseName: "EXCEL BÁSICO",
@@ -35,3 +38,37 @@ export const CATEGORY_CARDS = [
         imgPath: "/images/cursos/CATEGORY_OFIMATICA.jpg",
     },
 ];
+
+export const PRESENTATION_BOX: PresentationBox = {
+    title: "SOBRE EPTEN",
+    content:
+        "Empresa formada por Profesionales en Pedagogía, Sistemas, Industriales y Profesionales Técnicos con una amplia trayectoria de más de 20 años en el campo comercial-industrial-servicios. Creada para fomentar la tecnología y los negocios a fin de transformar la vida de las personas y la de su comunidad.",
+    cardList: [
+        {
+            iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+        },
+        {
+            iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+        },
+        {
+            iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+        },
+        {
+            iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+        },
+    ],
+    button: {
+        linkPath: "./nosotros",
+        content: "Conoce más aquí"
+    }
+}
+
+export const NEXT_STEP_INFO: InfoSchemaProps = {
+    topTitle: "¿PREPARADO PARA DAR",
+    bottomTitle: "EL SIGUIENTE PASO?",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mollis, tortor non eleifend rhoncus, quam elit condimentum tortor, eget posuere dui neque sed lacus. Donec dolor ipsum, viverra et dolor quis, laoreet semper eros. Integer cursus sollicitudin consectetur. Nullam et elementum quam.",
+    button: {
+        linkPath: "./inscripcion",
+        content: "Inscríbete"
+    }
+}

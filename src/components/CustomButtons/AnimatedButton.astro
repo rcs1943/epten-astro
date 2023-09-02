@@ -18,11 +18,11 @@ const { content, path } = Astro.props as AnimatedButtonProps;
         font-weight: 600;
         padding: 15px 25px;
         border-radius: 10px;
-        transition: right 0.2s ease-out 0.25s;
         overflow: hidden;
         z-index: 2;
         position: relative;
         text-decoration: none;
+        width: 100%;
         &::after {
             position: absolute;
             content: "";
@@ -41,6 +41,11 @@ const { content, path } = Astro.props as AnimatedButtonProps;
             visibility: visible;
             left: 100%;
             transition: left 1s ease-out;
+        }
+        @media (max-width: 600px) {
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 18px;
         }
     }
     @keyframes lettersColor {

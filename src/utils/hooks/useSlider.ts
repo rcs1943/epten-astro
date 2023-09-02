@@ -1,13 +1,13 @@
 import { useState } from "react";
 import type { SliderHook } from "./types";
-import { CARD_LIST_GAP } from "../constants/slider";
 
 const useSlider = (
     $list: React.MutableRefObject<HTMLDivElement | null>,
-    listLength: number
+    listItemsNumber: number,
+    listGap: number
 ): SliderHook => {
     //#region States
-    const [idxActiveCard, setIdxActiveCard] = useState(0);
+    const [idxActiveSlide, setIdxActiveSlide] = useState(0);
     const [dragging, setDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [endX, setEndX] = useState(0);
@@ -20,6 +20,7 @@ const useSlider = (
     }: React.TouchEvent<HTMLDivElement>): void => {
         setDragging(true);
         setStartX(touches[0].clientX);
+        setEndX(0);
     };
     const handleTouchMove = ({
         touches,
@@ -33,8 +34,8 @@ const useSlider = (
         const cardWidth: number = $list.current.children[0].clientWidth;
         //Verificando límites de movimiento
         if (
-            newCurrentTranslateX >= CARD_LIST_GAP ||
-            newCurrentTranslateX - cardWidth <= -listWidth - CARD_LIST_GAP
+            newCurrentTranslateX >= listGap ||
+            newCurrentTranslateX - cardWidth <= -listWidth - listGap
         )
             return;
         setCurrentTranslateX(newCurrentTranslateX);
@@ -50,16 +51,49 @@ const useSlider = (
         if (currentTranslateX < -listWidth + cardWidth)
             newTranslateX = -listWidth + cardWidth;
         //#endregion
-        const diffMovement: number = startX - endX;
-        let newIdxActiveCard: number = listWidth / (-newTranslateX + cardWidth);
+        const diffMovement: number = endX === 0 ? 0 : startX - endX;
+        const segmentWidth: number = listWidth / listItemsNumber;
+        let newIdxActiveSlide: number =
+            -newTranslateX /
+            (segmentWidth + (cardWidth + listGap - segmentWidth));
         // Decidiendo si hacia adelante o hacia atrás
-        newIdxActiveCard = Math[diffMovement > 0 ? "floor" : "ceil"](newIdxActiveCard);
-        newIdxActiveCard = listLength - newIdxActiveCard;
-        // Revisando si no hay desborde para atrás
-        newIdxActiveCard = newIdxActiveCard < 0 ? 0 : newIdxActiveCard;
+        newIdxActiveSlide =
+            Math[diffMovement > 0 ? "ceil" : "floor"](newIdxActiveSlide);
+        // Revisando si no hay desborde para adelante
+        newIdxActiveSlide =
+            newIdxActiveSlide > listItemsNumber - 1
+                ? listItemsNumber - 1
+                : newIdxActiveSlide;
         // Setteando valores adecuados
-        newTranslateX = -newIdxActiveCard * (cardWidth + CARD_LIST_GAP);
-        setIdxActiveCard(newIdxActiveCard);
+        newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
+        setIdxActiveSlide(newIdxActiveSlide);
+        setPrevTranslate(newTranslateX);
+        setCurrentTranslateX(newTranslateX);
+    };
+    const slideBack = (): void => {
+        if (!$list.current) return;
+        const cardWidth: number = $list.current.children[0].clientWidth;
+        const newIdxActiveSlide = idxActiveSlide - 1;
+        const newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
+        setIdxActiveSlide(newIdxActiveSlide);
+        setPrevTranslate(newTranslateX);
+        setCurrentTranslateX(newTranslateX);
+    };
+    const slideForward = (): void => {
+        if (!$list.current) return;
+        const cardWidth: number = $list.current.children[0].clientWidth;
+        const newIdxActiveSlide = idxActiveSlide + 1;
+        const newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
+        setIdxActiveSlide(newIdxActiveSlide);
+        setPrevTranslate(newTranslateX);
+        setCurrentTranslateX(newTranslateX);
+    };
+    const goToSlide = (idSlide: number): void => {
+        if (!$list.current) return;
+        const cardWidth: number = $list.current.children[0].clientWidth;
+        const newIdxActiveSlide = idSlide;
+        const newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
+        setIdxActiveSlide(newIdxActiveSlide);
         setPrevTranslate(newTranslateX);
         setCurrentTranslateX(newTranslateX);
     };
@@ -71,7 +105,12 @@ const useSlider = (
             touchMove: handleTouchMove,
             touchEnd: handleTouchEnd,
         },
-        idxActiveCard,
+        controllers: {
+            slideBack,
+            slideForward,
+            goToSlide,
+        },
+        idxActiveSlide,
     };
 };
 
