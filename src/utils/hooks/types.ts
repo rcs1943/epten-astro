@@ -15,3 +15,6 @@ export type SliderHook = {
     controllers: SliderControllersType;
     idxActiveSlide: number;
 };
+export type ScreenSliderWidthHook = {
+    screenRefWidth: number | undefined;
+}

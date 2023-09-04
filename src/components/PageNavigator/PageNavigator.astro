@@ -1,0 +1,76 @@
+---
+export interface PageNavigatorProps {
+    links?: string[] | null;
+}
+const { links } = Astro.props as PageNavigatorProps;
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.split("/").splice(2);
+console.log(currentPath)
+---
+
+<nav id="navigator">
+    <a href="/"><iconify-icon icon="pepicons:house"></iconify-icon></a>
+    <iconify-icon icon="material-symbols:arrow-forward-ios-rounded"
+    ></iconify-icon>
+    {links && links.length > 0 ? <a href="/cursos">CURSOS</a> : <b>CURSOS</b>}
+    {
+        links?.map((link, idx) => {
+            return (
+                <>
+                    <iconify-icon icon="material-symbols:arrow-forward-ios-rounded" />
+                    {idx === links.length - 1 ? <b>{link}</b> : <a href={`../${currentPath[idx]}`}>{link}</a>}
+                </>
+            );
+        })
+    }
+</nav>
+
+<style lang="scss">
+    #navigator {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: var(--primary);
+        padding: 25px 0 25px 25px;
+        box-shadow: -10px -10px var(--fifth-color);
+        margin-bottom: 44px;
+        color: var(--white);
+        font-size: 20px;
+        width: 85%;
+        @media (max-width: 1440px) {
+            text-align: center;
+        }
+        @media (max-width: 1280px) {
+            // width: 90%;
+        }
+        @media (max-width: 1024px) {
+            font-size: 10px;
+            gap: 5px;
+            .navigator a iconify-icon {
+                font-size: 13px;
+            }
+        }
+        @media (max-width: 820px) {
+            // width: 80%;
+        }
+        @media (max-width: 600px) {
+            padding: 20px 10px 20px 10px;
+            // width: 95%;
+            margin-bottom: 40px;
+            box-shadow: -5px -10px var(--fifth-color);
+        }
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--white);
+        }
+        iconify-icon {
+            font-size: 25px;
+            @media (max-width: 1024px) {
+                font-size: 13px;
+            }
+        }
+    }
+</style>

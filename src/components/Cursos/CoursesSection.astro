@@ -1,0 +1,28 @@
+---
+import type { CourseCategoryListProps } from "../CourseCategoryList/CourseCategoryList.astro";
+import CourseCategoryList from "../CourseCategoryList/CourseCategoryList.astro";
+import PageNavigator, { PageNavigatorProps } from "../PageNavigator/PageNavigator.astro";
+
+interface CoursesSectionProps {
+    cards: CourseCategoryListProps;
+    links: PageNavigatorProps;
+}
+const { cards, links } = Astro.props as CoursesSectionProps;
+---
+
+<section id="courses-section">
+    <PageNavigator links={links} />
+    <CourseCategoryList cards={cards} />
+</section>
+
+<style lang="scss">
+    #courses-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1920px;
+        width: calc(100% - 2rem);
+        margin: 80px 0 160px;
+    }
+</style>

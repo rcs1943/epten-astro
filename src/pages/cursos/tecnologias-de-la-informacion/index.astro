@@ -1,0 +1,11 @@
+---
+import CoursesSection from "../../../components/Cursos/CoursesSection.astro";
+import Jumbotron from "../../../components/Jumbotron/Jumbotron.astro";
+import Layout from "../../../layouts/Layout.astro";
+import { JUMBOTRON, TI_COURSES_CARDS } from "../../../utils/constants/cursos/TI/TI";
+---
+
+<Layout>
+    <Jumbotron props={JUMBOTRON} />
+    <CoursesSection links={["TECNOLOGÍAS DE LA INFORMACIÓN"]} cards={TI_COURSES_CARDS} />
+</Layout>

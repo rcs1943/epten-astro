@@ -1,20 +1,23 @@
 ---
 interface JumbotronProps {
-    title: string;
-    imagePath: string;
+    props: {
+        topTitle: string;
+        bottomTitle: string;
+        imagePath: string;
+    }
 }
 
-const { title, imagePath } = Astro.props as JumbotronProps;
+const { props } = Astro.props as JumbotronProps;
 ---
 
 <section class="jumbotron">
     <img
-        src={imagePath}
+        src={props.imagePath}
         alt="Jumbotron Nosotros"
     />
     <h1>
-        <span>{title.split(' ')[0]}</span>
-        <span>{title.split(' ')[1]}</span>
+        <span>{props.topTitle}</span>
+        <span>{props.bottomTitle}</span>
     </h1>
     <div class="ornament">
         <div class="blue50"></div>

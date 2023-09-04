@@ -1,3 +1,7 @@
+export const JUMBOTRON = {
+    title: "SOBRE EPTEN",
+    imagePath: "/images/nosotros/ABOUTUS_HERO.jpg"
+}
 export const PRESENTATION_BOX = {
     content:
         "Empresa formada por Profesionales en Pedagogía, Sistemas, Industriales y Profesionales Técnicos con una amplia trayectoria de más de 20 años en el campo comercial-industrial-servicios. Creada para fomentar la tecnología y los negocios a fin de transformar la vida de las personas y la de su comunidad.",

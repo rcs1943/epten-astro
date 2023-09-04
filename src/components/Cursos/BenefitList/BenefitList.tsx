@@ -1,22 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import ValueCard from "../../Cards/ValueCard/ValueCard";
-import type { ValueListProps } from "./types";
-import style from "./styles.module.scss";
-import useSlider from "../../../utils/hooks/useSlider";
-import { CARD_LIST_GAP } from "../../../utils/constants/slider";
 import { getIsMobile } from "../../../utils/deviceSize";
+import BenefitCard from "../../Cards/BenefitCard/BenefitCard";
+import { CARD_LIST_GAP } from "../../../utils/constants/slider";
+import type { BenefitListProps } from "./types";
+import useSlider from "../../../utils/hooks/useSlider";
+import slideStyle from "../../Nosotros/ValueList/styles.module.scss";
+import style from "./styles.module.scss";
 import SliderSlickPager from "../../SliderSlickPager/SliderSlickPager";
 
-const ValueList = ({ values }: ValueListProps) => {
+const BenefitList = ({ benefits }: BenefitListProps) => {
     const [screenRefWidth, setScreenRefWidth] = useState<number | undefined>();
+    const isMobile = getIsMobile();
     const $screen = useRef<HTMLDivElement>(null);
     const $list = useRef<HTMLDivElement>(null);
-    const isMobile = getIsMobile();
-    const { currentTranslateX, dragging, handler, controllers, idxActiveSlide } = useSlider(
-        $list,
-        values.length,
-        CARD_LIST_GAP
-    );
+    const {
+        currentTranslateX,
+        dragging,
+        handler,
+        controllers,
+        idxActiveSlide,
+    } = useSlider($list, benefits.length, CARD_LIST_GAP);
     useEffect(() => {
         const handleResize = () =>
             setScreenRefWidth($screen.current?.clientWidth);
@@ -27,13 +30,15 @@ const ValueList = ({ values }: ValueListProps) => {
         };
     }, []);
     return (
-        <article className={style.container}>
-            <div className={style.screen} ref={$screen}>
+        <article className={slideStyle.container}>
+            <div className={slideStyle.screen} ref={$screen}>
                 <div
                     className={style.list}
                     ref={$list}
                     style={{
-                        transform: isMobile ? `translateX(${currentTranslateX}px)` : "none",
+                        transform: isMobile
+                            ? `translateX(${currentTranslateX}px)`
+                            : "none",
                         transition: dragging
                             ? "transform ease-out 0.25s"
                             : "transform ease-out 0.45s",
@@ -42,10 +47,10 @@ const ValueList = ({ values }: ValueListProps) => {
                     onTouchMove={handler.touchMove}
                     onTouchEnd={handler.touchEnd}
                 >
-                    {values.map(({ icon, title, content }) => (
-                        <ValueCard
-                            key={title}
-                            icon={icon}
+                    {benefits.map(({ imgPath, title, content }, idx) => (
+                        <BenefitCard
+                            key={idx}
+                            imgPath={imgPath}
                             title={title}
                             content={content}
                             mobileWidth={screenRefWidth}
@@ -53,9 +58,15 @@ const ValueList = ({ values }: ValueListProps) => {
                     ))}
                 </div>
             </div>
-            {isMobile && <SliderSlickPager slides={values} controllers={controllers} idxActiveSlide={idxActiveSlide} />}
+            {isMobile && (
+                <SliderSlickPager
+                    slides={benefits}
+                    controllers={controllers}
+                    idxActiveSlide={idxActiveSlide}
+                />
+            )}
         </article>
     );
-}
+};
 
-export default ValueList;
+export default BenefitList;

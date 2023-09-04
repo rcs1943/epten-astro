@@ -1,7 +1,60 @@
 ---
+import CourseCategoryList from "../../components/CourseCategoryList/CourseCategoryList.astro";
+import Jumbotron from "../../components/Jumbotron/Jumbotron.astro";
+import MainTitleHeader from "../../components/TitleHeaders/MainTitleHeader.astro";
 import Layout from "../../layouts/Layout.astro";
+import { CATEGORY_CARDS } from "../../utils/constants";
+import {
+    BENEFIT_CARDS,
+    JUMBOTRON,
+    INSCRIPTION_INFO,
+} from "../../utils/constants/cursos/cursos";
+import InfoSchema from "../../components/InfoSchema/InfoSchema.astro";
+import Divider from "../../components/Divider/Divider.astro";
+import BenefitList from "../../components/Cursos/BenefitList/BenefitList";
+import CoursesSection from "../../components/Cursos/CoursesSection.astro";
 ---
 
 <Layout>
-    <h1>Try</h1>
+    <Jumbotron props={JUMBOTRON} />
+    <CoursesSection cards={CATEGORY_CARDS} />
+    <section id="benefits-section">
+        <article class="title-wrapper">
+            <MainTitleHeader preTitle="NUESTROS" boldTitle="BENEFICIOS" />
+        </article>
+        <BenefitList benefits={BENEFIT_CARDS} client:only/>
+    </section>
+    <Divider pixels="100px" />
+    <InfoSchema
+        topTitle={INSCRIPTION_INFO.topTitle}
+        bottomTitle={INSCRIPTION_INFO.bottomTitle}
+        content={INSCRIPTION_INFO.content}
+        button={INSCRIPTION_INFO.button}
+    />
+    <Divider pixels="60px" />
 </Layout>
+
+<style lang="scss">
+    #benefits-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1920px;
+        width: calc(100% - 2rem);
+        @media (max-width: 650px) {
+            align-items: unset;
+            justify-content: unset;
+            margin-top: 140px;
+        }
+    }
+    .title-wrapper {
+        display: flex;
+        width: 65%;
+        max-width: 950px;
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+    }
+</style>

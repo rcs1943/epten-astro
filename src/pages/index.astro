@@ -28,7 +28,7 @@ import Divider from '../components/Divider/Divider.astro';
         <article class="title-wrapper">
             <MainTitleHeader preTitle="DESCUBRE" boldTitle="NUESTROS CURSOS" postTitle="EN" />
         </article>
-        <CourseCategoryList categoryCards={CATEGORY_CARDS} />
+        <CourseCategoryList cards={CATEGORY_CARDS} />
     </section>
     <PresentationBox 
         title={PRESENTATION_BOX.title} 
@@ -77,7 +77,7 @@ import Divider from '../components/Divider/Divider.astro';
         width: 65%;
         max-width: 950px;
         @media (max-width: 600px) {
-            width: 98%;
+            width: 92%;
         }
     }
 </style>

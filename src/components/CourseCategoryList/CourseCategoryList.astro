@@ -1,19 +1,19 @@
 ---
 import Card from "./components/Card.astro";
-interface CourseCategoryListProps {
-    categoryCards: {
+export interface CourseCategoryListProps {
+    cards: {
         title: string;
         linkPath: string;
         imgPath: string;
     }[];
 }
-const { categoryCards } = Astro.props as CourseCategoryListProps;
+const { cards } = Astro.props as CourseCategoryListProps;
 ---
 
 <article id="container">
     <div class="card-list">
         {
-            categoryCards.map(({ title, linkPath, imgPath }) => (
+            cards.map(({ title, linkPath, imgPath }) => (
                 <Card
                     key={title}
                     title={title}
@@ -71,9 +71,6 @@ const { categoryCards } = Astro.props as CourseCategoryListProps;
                 left: -20px;
                 right: -20px;
             }
-        }
-        @media (max-width: 1300px) {
-            width: 70%;
         }
         @media (max-width: 820px) {
             width: 85%;

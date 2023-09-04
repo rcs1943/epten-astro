@@ -7,11 +7,11 @@ import InfoSchema from "../components/InfoSchema/InfoSchema.astro"
 import TitleHeaderMini from "../components/TitleHeaders/MiniTitleHeader.astro"
 import ValueList from "../components/Nosotros/ValueList/ValueList"
 
-import { VISION, MISSION, PRESENTATION_BOX, VALUE_CARDS } from "../utils/constants/nosotros"
+import { VISION, MISSION, PRESENTATION_BOX, VALUE_CARDS, JUMBOTRON } from "../utils/constants/nosotros"
 ---
 
 <Layout>
-    <Jumbotron title="SOBRE EPTEN" imagePath="/images/ABOUTUS_HERO.jpg" />
+    <Jumbotron title={JUMBOTRON.title} imagePath={JUMBOTRON.imagePath} />
     <Divider pixels="40px" />
     <PresentationBox content={PRESENTATION_BOX.content} cardList={PRESENTATION_BOX.cardList} />
     <Divider pixels="100px" mobilePixels="90px" />

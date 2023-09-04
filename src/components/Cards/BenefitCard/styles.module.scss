@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 40px 0;
+    @media (max-width: 650px) {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 0;
+        width: 100%;
+        min-width: 325px;
+    }
+    img {
+        width: 80px;
+        border-radius: 50%;
+    }
+}
+.infoWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    gap: 20px;
+    @media (max-width: 650px) {
+        width: 90%;
+    }
+    h5 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 17px;
+    }
+}
