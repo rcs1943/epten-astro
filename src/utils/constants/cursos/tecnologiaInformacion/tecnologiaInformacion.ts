@@ -1,10 +1,12 @@
-export const JUMBOTRON = {
+import type { CourseCategoryCardProps } from "../../../../components/CourseCategoryList/CourseCategoryList.astro";
+import type { JumbotronProps } from "../../../../components/Jumbotron/Jumbotron.astro";
+
+export const TI_CATEGORY_JUMBOTRON: JumbotronProps = {
     topTitle: "TECNOLOGÍAS DE",
     bottomTitle: "LA INFORMACIÓN",
     imagePath: "/images/cursos/ti/HERO_IMG.jpg",
 };
-
-export const TI_COURSES_CARDS = [
+export const TI_COURSES_CARDS: CourseCategoryCardProps[] = [
     {
         title: "Administración de Sistemas Operativos de Servidores",
         linkPath: "./tecnologias-de-la-informacion/administracion-de-sistemas-operativos-de-servidores",
@@ -36,3 +38,5 @@ export const TI_COURSES_CARDS = [
         imgPath: "/images/cursos/ti/COURSE_FRONTEND.jpg",
     },
 ];
+
+export const TI_CATEGORY_NAV_LINKS: string[] = ["TECNOLOGÍAS DE LA INFORMACIÓN"];

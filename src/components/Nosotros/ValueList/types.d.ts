@@ -1,7 +1,8 @@
+export interface ValuesProps {
+    icon: string;
+    title: string;
+    content: string;
+}
 export type ValueListProps = {
-    values: {
-        icon: string;
-        title: string;
-        content: string;
-    }[];
+    values: ValuesProps[];
 };

@@ -1,0 +1,47 @@
+<div id="container">
+    <p>Contáctanos por Whatsapp</p>
+    <a href="https://wa.me/+51958634825" target="_blank"
+        ><iconify-icon icon="akar-icons:whatsapp-fill"></iconify-icon>Escríbenos
+        aquí</a
+    >
+</div>
+
+<style lang="scss">
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        p {
+            font-size: 26px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            font-size: 30px;
+            background-color: #25d366;
+            color: var(--white);
+            padding: 15px 25px;
+            border-radius: 10px;
+            transition: 0.5s;
+            &:hover {
+                color: var(--black);
+            }
+            @media (max-width: 600px) {
+                font-size: 20px;
+                font-weight: 500;
+            }
+            iconify-icon {
+                font-size: 40px;
+                @media (max-width: 600px) {
+                    font-size: 37px;
+                }
+            }
+        }
+    }
+</style>

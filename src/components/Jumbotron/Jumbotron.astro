@@ -1,23 +1,22 @@
 ---
-interface JumbotronProps {
-    props: {
-        topTitle: string;
-        bottomTitle: string;
-        imagePath: string;
-    }
+export interface JumbotronProps {
+    topTitle?: string;
+    bottomTitle: string;
+    imagePath: string;
+}
+interface Props {
+    props: JumbotronProps;
 }
 
-const { props } = Astro.props as JumbotronProps;
+const { props } = Astro.props as Props;
+const { bottomTitle, imagePath, topTitle } = props;
 ---
 
 <section class="jumbotron">
-    <img
-        src={props.imagePath}
-        alt="Jumbotron Nosotros"
-    />
+    <img src={imagePath} alt="Jumbotron Nosotros" />
     <h1>
-        <span>{props.topTitle}</span>
-        <span>{props.bottomTitle}</span>
+        <span>{topTitle}</span>
+        <span>{bottomTitle}</span>
     </h1>
     <div class="ornament">
         <div class="blue50"></div>
@@ -35,7 +34,6 @@ const { props } = Astro.props as JumbotronProps;
         min-height: 465px;
         max-width: 1920px;
         text-align: center;
-        background: url("") no-repeat center;
         background-size: cover;
         overflow: hidden;
         position: relative;
@@ -137,5 +135,4 @@ const { props } = Astro.props as JumbotronProps;
             }
         }
     }
-
 </style>

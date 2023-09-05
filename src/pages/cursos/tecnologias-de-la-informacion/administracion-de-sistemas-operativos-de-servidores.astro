@@ -2,17 +2,15 @@
 import Jumbotron from "../../../components/Jumbotron/Jumbotron.astro";
 import PageNavigator from "../../../components/PageNavigator/PageNavigator.astro";
 import Layout from "../../../layouts/Layout.astro";
-import { JUMBOTRON } from "../../../utils/constants/cursos/TI/adminSOServidores";
 import Divider from "../../../components/Divider/Divider.astro";
+import {
+    ADMIN_SO_JUMBOTRON,
+    ADMIN_SO_NAV_LINKS,
+} from "../../../utils/constants/cursos/tecnologiaInformacion/adminSOServidores";
 ---
 
 <Layout>
-    <Jumbotron props={JUMBOTRON} />
+    <Jumbotron props={ADMIN_SO_JUMBOTRON} />
     <Divider pixels="80px" />
-    <PageNavigator
-        links={[
-            "TECNOLOGÍAS DE LA INFORMACIÓN",
-            "ADMINISTRACIÓN DE SISTEMAS OPERATIVOS DE SERVIDORES",
-        ]}
-    />
+    <PageNavigator links={ADMIN_SO_NAV_LINKS} />
 </Layout>

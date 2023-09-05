@@ -1,0 +1,57 @@
+---
+interface Props {
+    name: string;
+    dataTitle: string;
+    dataRequired?: boolean;
+    defaultValue: string;
+    optionList: {
+        label: string;
+        options: string[];
+    }[];
+    error?: string;
+}
+const { name, dataTitle, dataRequired = true, defaultValue, optionList, error } = Astro.props as Props;
+---
+
+<div id="wrapper">
+    <select name={name} data-title={dataTitle} data-required={dataRequired}>
+        <option disabled selected>
+            {defaultValue}
+        </option>
+        {optionList.map(({label, options}) => {
+            return (
+                <optgroup label={label}>
+                    {options.map(option => <option value={option}>{option}</option>)}
+                </optgroup>
+            )
+        })}
+    </select>
+    {error && <span>{error}</span>}
+</div>
+
+<style lang="scss">
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        select {
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            color: var(--primary);
+            cursor: pointer;
+            text-overflow: ellipsis;
+            border: 1px solid var(--fourth-color);
+            outline: none;
+            transition: 0.2s;
+            &:focus {
+                border: 1px solid var(--primary);
+            }
+        }
+        span {
+            display: flex;
+            justify-content: flex-start;
+            color: #ef4423;
+        }
+    }
+</style>

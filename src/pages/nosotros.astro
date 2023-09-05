@@ -4,38 +4,18 @@ import Jumbotron from "../components/Jumbotron/Jumbotron.astro"
 import PresentationBox from "../components/PresentationBox/PresentationBox.astro"
 import Divider from "../components/Divider/Divider.astro"
 import InfoSchema from "../components/InfoSchema/InfoSchema.astro"
-import TitleHeaderMini from "../components/TitleHeaders/MiniTitleHeader.astro"
-import ValueList from "../components/Nosotros/ValueList/ValueList"
 
-import { VISION, MISSION, PRESENTATION_BOX, VALUE_CARDS, JUMBOTRON } from "../utils/constants/nosotros"
+import { VISION, MISSION, PRESENTATION_BOX, VALUE_CARDS, ABOUT_US_JUMBOTRON } from "../utils/constants/nosotros"
+import ValuesSection from "../components/Nosotros/ValuesSection.astro";
 ---
 
 <Layout>
-    <Jumbotron title={JUMBOTRON.title} imagePath={JUMBOTRON.imagePath} />
+    <Jumbotron props={ABOUT_US_JUMBOTRON} />
     <Divider pixels="40px" />
-    <PresentationBox content={PRESENTATION_BOX.content} cardList={PRESENTATION_BOX.cardList} />
+    <PresentationBox presentationBoxProps={PRESENTATION_BOX} />
     <Divider pixels="100px" mobilePixels="90px" />
-    <InfoSchema topTitle={MISSION.topTitle} bottomTitle={MISSION.bottomTitle} content={MISSION.content} />
+    <InfoSchema infoSchemaProps={MISSION} />
     <Divider pixels="150px" mobilePixels="90px" />
-    <InfoSchema topTitle={VISION.topTitle} bottomTitle={VISION.bottomTitle} content={VISION.content} />
-    <section id="values-section">
-        <TitleHeaderMini title="Nuestros Valores" />
-        <ValueList values={VALUE_CARDS} client:only />
-    </section>
+    <InfoSchema infoSchemaProps={VISION} />
+    <ValuesSection valueCards={VALUE_CARDS} />
 </Layout>
-
-<style lang="scss">
-    #values-section {
-        display: flex;
-        flex-direction: column;
-        width: calc(100% - 4rem);
-        max-width: 1250px;
-        gap: 70px;
-        margin: 120px 0 100px;
-        @media (max-width: 650px) {
-            width: calc(100% - 2rem);
-            margin: 80px 0;
-            gap: 50px;
-        }
-    }
-</style>

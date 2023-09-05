@@ -7,16 +7,26 @@ export interface InfoSchemaProps {
     button?: {
         linkPath: string;
         content: string;
-    }
+    };
 }
-const { topTitle, bottomTitle, linebreak = false, content, button } = Astro.props as InfoSchemaProps;
+export interface Props {
+    infoSchemaProps: InfoSchemaProps;
+}
+const { infoSchemaProps } = Astro.props as Props;
+const {
+    topTitle,
+    bottomTitle,
+    linebreak = false,
+    content,
+    button,
+} = infoSchemaProps;
 ---
 
 <article class="info-schema">
     <div class="title-container">
         <h2>
             <span>{topTitle}</span>
-            {linebreak && <br>}
+            {linebreak && <br />}
             <b>{bottomTitle}</b>
         </h2>
     </div>

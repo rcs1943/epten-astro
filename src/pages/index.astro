@@ -1,83 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import MainTitleHeader from '../components/TitleHeaders/MainTitleHeader.astro';
-import PromoCourseBox from '../components/PromoCourseBox/PromoCourseBox.astro';
-import CourseCategoryList from '../components/CourseCategoryList/CourseCategoryList.astro'
-import PresentationBox from '../components/PresentationBox/PresentationBox.astro';
-import InfoSchema from "../components/InfoSchema/InfoSchema.astro"
-import { CATEGORY_CARDS, NEXT_STEP_INFO, PRESENTATION_BOX, PROMO_COURSES } from '../utils/constants';
-import Divider from '../components/Divider/Divider.astro';
+import Layout from "../layouts/Layout.astro";
+import PresentationBox from "../components/PresentationBox/PresentationBox.astro";
+import InfoSchema from "../components/InfoSchema/InfoSchema.astro";
+import {
+    CATEGORY_CARDS,
+    NEXT_STEP_INFO,
+    INDEX_PRESENTATION_BOX,
+    PROMO_COURSES,
+} from "../utils/constants";
+import Divider from "../components/Divider/Divider.astro";
+import PromoSection from "../components/Index/PromoSection.astro";
+import CategoriesSection from "../components/Index/CategoriesSection.astro";
 ---
 
 <Layout>
-    <section id="promo-section">
-        <article class="title-wrapper">
-            <MainTitleHeader boldTitle="CURSOS DEL MES" />
-        </article>
-        <article class="courses-wrapper">
-            {PROMO_COURSES.map(({courseName, schedule, startDate, imagePath}, idx) => 
-                <PromoCourseBox 
-                    key={idx}
-                    courseName={courseName} 
-                    schedule={schedule}
-                    startDate={startDate}
-                    imagePath={imagePath} />)}
-        </article>
-    </section>
-    <section id="categories-section">
-        <article class="title-wrapper">
-            <MainTitleHeader preTitle="DESCUBRE" boldTitle="NUESTROS CURSOS" postTitle="EN" />
-        </article>
-        <CourseCategoryList cards={CATEGORY_CARDS} />
-    </section>
-    <PresentationBox 
-        title={PRESENTATION_BOX.title} 
-        content={PRESENTATION_BOX.content}
-        cardList={PRESENTATION_BOX.cardList}
-        button={PRESENTATION_BOX.button} />
+    <PromoSection promoCourses={PROMO_COURSES} />
+    <CategoriesSection categoryCards={CATEGORY_CARDS} />
+    <PresentationBox presentationBoxProps={INDEX_PRESENTATION_BOX} />
     <Divider pixels="100px" />
-    <InfoSchema 
-        topTitle={NEXT_STEP_INFO.topTitle} 
-        bottomTitle={NEXT_STEP_INFO.bottomTitle}
-        linebreak={true}
-        content={NEXT_STEP_INFO.content}
-        button={NEXT_STEP_INFO.button} />
-    <Divider pixels="100px"/>
+    <InfoSchema infoSchemaProps={NEXT_STEP_INFO} />
+    <Divider pixels="100px" />
 </Layout>
 
-<style lang="scss">
-	#promo-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: calc(100% - 2rem);
-        max-width: 1920px;
-        margin-top: 100px;
-        gap: 50px;
-        .courses-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 70px;
-            @media (max-width: 650px) {
-                gap: 40px;
-            }
-        }
-    }
-    #categories-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-width: 1920px;
-        margin: 120px 100px;
-        gap: 60px;
-    }
-    .title-wrapper {
-        display: flex;
-        width: 65%;
-        max-width: 950px;
-        @media (max-width: 600px) {
-            width: 92%;
-        }
-    }
-</style>
+<style lang="scss"></style>

@@ -1,0 +1,41 @@
+---
+import CourseCategoryList, {
+    CourseCategoryCardProps,
+} from "../CourseCategoryList/CourseCategoryList.astro";
+import MainTitleHeader from "../TitleHeaders/MainTitleHeader.astro";
+interface Props {
+    categoryCards: CourseCategoryCardProps[];
+}
+const { categoryCards } = Astro.props as Props;
+---
+
+<section id="categories-section">
+    <article class="title-wrapper">
+        <MainTitleHeader
+            preTitle="DESCUBRE"
+            boldTitle="NUESTROS CURSOS"
+            postTitle="EN"
+        />
+    </article>
+    <CourseCategoryList cards={categoryCards} />
+</section>
+
+<style lang="scss">
+    #categories-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1920px;
+        margin: 120px 100px;
+        gap: 60px;
+    }
+    .title-wrapper {
+        display: flex;
+        width: 65%;
+        max-width: 950px;
+        @media (max-width: 600px) {
+            width: 92%;
+        }
+    }
+</style>

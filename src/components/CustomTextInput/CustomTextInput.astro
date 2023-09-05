@@ -1,0 +1,61 @@
+---
+interface Props {
+    name: string;
+    placeholder: string;
+    dataTitle: string;
+    dataRequired?: boolean;
+    dataRegex: string;
+    dataPattern: string;
+    error?: string;
+}
+const {
+    name,
+    dataPattern,
+    dataRegex,
+    dataRequired = true,
+    dataTitle,
+    placeholder,
+    error,
+} = Astro.props as Props;
+---
+
+<div id="wrapper">
+    <input
+        type="text"
+        name={name}
+        placeholder={placeholder}
+        data-title={dataTitle}
+        data-required={dataRequired}
+        data-regex={dataRegex}
+        data-pattern={dataPattern}
+    />
+    {error && <span>{error}</span>}
+</div>
+
+<style lang="scss">
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        input {
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid var(--fourth-color);
+            outline: none;
+            transition: 0.2s;
+            &::placeholder {
+                color: var(--primary);
+                opacity: 0.5;
+            }
+            &:focus {
+                border: 1px solid var(--primary);
+            }
+        }
+        span {
+            display: flex;
+            justify-content: flex-start;
+            color: #ef4423;
+        }
+    }
+</style>

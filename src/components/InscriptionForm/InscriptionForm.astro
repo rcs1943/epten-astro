@@ -1,0 +1,161 @@
+---
+import Form from "./components/Form.astro";
+import ThanksModal from "./components/ThanksModal.astro";
+import WhatsappContact from "./components/WhatsappContact.astro";
+---
+
+<section id="container">
+    <article id="title-container">
+        <div class="wrapper">
+            <h1>Solicita más <b>información aquí</b></h1>
+        </div>
+    </article>
+    <article id="form-wrapper">
+        <Form />
+        <hr />
+        <WhatsappContact />
+    </article>
+    <ThanksModal />
+</section>
+
+<style lang="scss">
+    #container {
+        text-align: center;
+        width: 100%;
+        max-width: 1920px;
+    }
+    #title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1920px;
+        width: 100%;
+        height: 200px;
+        background: url("images/HERO_OVERLAY.jpg") no-repeat center;
+        background-size: cover;
+        @media (max-width: 600px) {
+            height: 160px;
+        }
+        & .wrapper {
+            position: relative;
+            margin: 0 auto 0;
+            width: calc(100% - 3rem);
+            max-width: 960px;
+            translate: 0 45px;
+            @media (max-width: 600px) {
+                width: calc(100% - 1rem);
+                translate: 0 40px;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                border-top: 8px solid var(--white);
+                border-left: 8px solid var(--white);
+                width: 100px;
+                bottom: 0px;
+                height: 60px;
+                left: 0;
+                z-index: 0;
+                @media (max-width: 985px) {
+                    width: 70px;
+                }
+                @media (max-width: 920px) {
+                    width: 10%;
+                    height: 55px;
+                }
+                @media (max-width: 600px) {
+                    width: 20%;
+                    height: 45px;
+                    bottom: 12px;
+                }
+                @media (max-width: 450px) {
+                    width: 40px
+                }
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                border-top: 8px solid var(--white);
+                border-right: 8px solid var(--white);
+                bottom: 0px;
+                width: 100px;
+                height: 60px;
+                right: 0;
+                z-index: 0;
+                @media (max-width: 985px) {
+                    width: 70px;
+                }
+                @media (max-width: 920px) {
+                    width: 10%;
+                    height: 55px;
+                }
+                @media (max-width: 600px) {
+                    width: 20%;
+                    height: 45px;
+                    bottom: 12px;
+                }
+                @media (max-width: 450px) {
+                    width: 40px
+                }
+            }
+        }
+        h1 {
+            font-size: 50px;
+            color: var(--white);
+            translate: 0 -35px;
+            @media (max-width: 925px) {
+                font-size: 40px;
+            }
+            @media (max-width: 760px) {
+                font-size: 30px;
+            }
+            @media (max-width: 600px) {
+                font-size: 26px;
+            }
+        }
+        b {
+            @media (max-width: 600px) {
+                display: block;
+            }
+        }
+    }
+    #form-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border: 8px solid var(--primary);
+        border-top: 0;
+        margin: 20px auto 0;
+        width: calc(100% - 3rem);
+        max-width: 960px;
+        padding: 60px 150px;
+        gap: 40px;
+        @media (max-width: 760px) {
+            padding: 40px 50px;
+        }
+        @media (max-width: 600px) {
+            width: calc(100% - 1rem);
+            margin: 45px auto 0;
+            padding: 30px 40px;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            border-bottom: 3px solid var(--fifth-color);
+            border-left: 3px solid var(--fifth-color);
+            border-right: 3px solid var(--fifth-color);
+            bottom: -25px;
+            height: 500px;
+            left: 15px;
+            right: 15px;
+            box-sizing: inherit;
+            z-index: -1;
+        }
+        hr {
+            border: 2px dashed var(--primary);
+            background-size: 30px;
+            width: 100%;
+            margin: 0;
+        }
+    }
+</style>

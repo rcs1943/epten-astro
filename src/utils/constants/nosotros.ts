@@ -1,8 +1,14 @@
-export const JUMBOTRON = {
-    title: "SOBRE EPTEN",
-    imagePath: "/images/nosotros/ABOUTUS_HERO.jpg"
-}
-export const PRESENTATION_BOX = {
+import type { InfoSchemaProps } from "../../components/InfoSchema/InfoSchema.astro";
+import type { JumbotronProps } from "../../components/Jumbotron/Jumbotron.astro";
+import type { ValuesProps } from "../../components/Nosotros/ValueList/types";
+import type { PresentationBoxProps } from "../../components/PresentationBox/PresentationBox.astro";
+
+export const ABOUT_US_JUMBOTRON: JumbotronProps = {
+    topTitle: "SOBRE",
+    bottomTitle: "EPTEN",
+    imagePath: "/images/nosotros/ABOUTUS_HERO.jpg",
+};
+export const PRESENTATION_BOX: PresentationBoxProps = {
     content:
         "Empresa formada por Profesionales en Pedagogía, Sistemas, Industriales y Profesionales Técnicos con una amplia trayectoria de más de 20 años en el campo comercial-industrial-servicios. Creada para fomentar la tecnología y los negocios a fin de transformar la vida de las personas y la de su comunidad.",
     cardList: [
@@ -21,21 +27,21 @@ export const PRESENTATION_BOX = {
     ],
 };
 
-export const MISSION = {
+export const MISSION: InfoSchemaProps = {
     topTitle: "NUESTRA",
     bottomTitle: "MISIÓN",
     content:
         "Brindar una instrucción de calidad orientada al emprendimiento y poder satisfacer ampliamente las necesidades de aprendizaje de nuestros estudiantes.",
 };
 
-export const VISION = {
+export const VISION: InfoSchemaProps = {
     topTitle: "NUESTRA",
     bottomTitle: "VISIÓN",
     content:
         "Ser una institución líder en educación, transformando la vida de sus estudiantes y la comunidad.",
 };
 
-export const VALUE_CARDS = [
+export const VALUE_CARDS: ValuesProps[] = [
     {
         icon: "/images/nosotros/ICON_EDUCACION.svg",
         title: "Educación",

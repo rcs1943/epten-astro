@@ -1,6 +1,6 @@
 ---
 import Card from "./components/Card.astro";
-export interface PresentationBox {
+export interface PresentationBoxProps {
     title?: string;
     content: string;
     cardList: {
@@ -9,10 +9,14 @@ export interface PresentationBox {
     }[];
     button?: {
         linkPath: string;
-        content?: string;
+        content: string;
     };
 }
-const { title, content, cardList, button } = Astro.props as PresentationBox;
+interface Props {
+    presentationBoxProps: PresentationBoxProps;
+}
+const { presentationBoxProps } = Astro.props as Props;
+const { title, content, cardList, button } = presentationBoxProps;
 ---
 
 <section class="presentation-box">
@@ -20,18 +24,22 @@ const { title, content, cardList, button } = Astro.props as PresentationBox;
         {title && <h2>{title}</h2>}
         <p>{content}</p>
         <div class="cards-wrapper">
-            {cardList.map((card, idx) => (
-                <Card
-                    key={idx}
-                    iconPath={card.iconPath}
-                    content={card.content}
-                />
-            ))}
+            {
+                cardList.map((card, idx) => (
+                    <Card
+                        key={idx}
+                        iconPath={card.iconPath}
+                        content={card.content}
+                    />
+                ))
+            }
         </div>
-        {button && 
-            <div class="link-btn-wrapper">
-                <a href={button.linkPath}>{button.content}</a>
-            </div>
+        {
+            button && (
+                <div class="link-btn-wrapper">
+                    <a href={button.linkPath}>{button.content}</a>
+                </div>
+            )
         }
     </article>
 </section>

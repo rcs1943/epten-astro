@@ -1,12 +1,12 @@
 ---
-export interface PageNavigatorProps {
-    links?: string[] | null;
+export type NavLinkTypes = string[] | null;
+interface Props {
+    links?: NavLinkTypes;
 }
-const { links } = Astro.props as PageNavigatorProps;
+const { links } = Astro.props as Props;
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.split("/").splice(2);
-console.log(currentPath)
 ---
 
 <nav id="navigator">
@@ -18,8 +18,12 @@ console.log(currentPath)
         links?.map((link, idx) => {
             return (
                 <>
-                    <iconify-icon icon="material-symbols:arrow-forward-ios-rounded" />
-                    {idx === links.length - 1 ? <b>{link}</b> : <a href={`../${currentPath[idx]}`}>{link}</a>}
+                <iconify-icon icon="material-symbols:arrow-forward-ios-rounded" />
+                {idx === links.length - 1 ? (
+                    <b>{link}</b>
+                ) : (
+                    <a href={`../${currentPath[idx]}`}>{link}</a>
+                )}
                 </>
             );
         })

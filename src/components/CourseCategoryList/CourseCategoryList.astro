@@ -1,13 +1,14 @@
 ---
 import Card from "./components/Card.astro";
-export interface CourseCategoryListProps {
-    cards: {
-        title: string;
-        linkPath: string;
-        imgPath: string;
-    }[];
+export interface CourseCategoryCardProps {
+    title: string;
+    linkPath: string;
+    imgPath: string;
+};
+interface Props {
+    cards: CourseCategoryCardProps[];
 }
-const { cards } = Astro.props as CourseCategoryListProps;
+const { cards } = Astro.props as Props;
 ---
 
 <article id="container">

@@ -1,17 +1,25 @@
 ---
 import AnimatedButton from "../CustomButtons/AnimatedButton.astro";
-interface PromoCoursesBoxProps {
+export interface PromoCoursesBoxProps {
     courseName: string;
     schedule: string;
     startDate: string;
     imagePath: string;
-    key: number;
+    idx: number;
+};
+interface Props {
+    props: PromoCoursesBoxProps;
 }
-const { courseName, schedule, startDate, imagePath, key } = Astro.props as PromoCoursesBoxProps;
+const { props } = Astro.props as Props;
+const { courseName, schedule, startDate, imagePath, idx } = props;
 ---
 
 <div id="container">
-    <img src={imagePath} alt="Imagen Curso Del Mes" style={{order: key % 2 === 0 ? 0 : 1}}}>
+    <img
+        src={imagePath}
+        alt="Imagen Curso Del Mes"
+        style={{ order: idx % 2 === 0 ? 0 : 1 }}
+    />
     <div class="info">
         <h2>{courseName}</h2>
         <h3>Horario:</h3>
@@ -19,7 +27,10 @@ const { courseName, schedule, startDate, imagePath, key } = Astro.props as Promo
         <h3>Inicio:</h3>
         <p>{startDate}</p>
         <div class="button-wrapper">
-            <AnimatedButton content="Más información aquí" path="./inscripcion" />
+            <AnimatedButton
+                content="Más información aquí"
+                path="./inscripcion"
+            />
         </div>
     </div>
 </div>
@@ -53,7 +64,7 @@ const { courseName, schedule, startDate, imagePath, key } = Astro.props as Promo
             order: 1;
         }
         @media (max-width: 500px) {
-            padding: 40px 25px
+            padding: 40px 25px;
         }
         h2 {
             color: var(--fifth-color);

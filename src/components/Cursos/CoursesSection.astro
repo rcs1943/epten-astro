@@ -1,17 +1,17 @@
 ---
-import type { CourseCategoryListProps } from "../CourseCategoryList/CourseCategoryList.astro";
+import type { CourseCategoryCardProps } from "../CourseCategoryList/CourseCategoryList.astro";
 import CourseCategoryList from "../CourseCategoryList/CourseCategoryList.astro";
-import PageNavigator, { PageNavigatorProps } from "../PageNavigator/PageNavigator.astro";
+import PageNavigator, { NavLinkTypes } from "../PageNavigator/PageNavigator.astro";
 
 interface CoursesSectionProps {
-    cards: CourseCategoryListProps;
-    links: PageNavigatorProps;
+    cards: CourseCategoryCardProps[];
+    navLinks: NavLinkTypes;
 }
-const { cards, links } = Astro.props as CoursesSectionProps;
+const { cards, navLinks } = Astro.props as CoursesSectionProps;
 ---
 
 <section id="courses-section">
-    <PageNavigator links={links} />
+    <PageNavigator links={navLinks} />
     <CourseCategoryList cards={cards} />
 </section>
 

@@ -1,0 +1,36 @@
+---
+import { CONTACT_FORM_INPUT_PROPS } from "../../../utils/constants/contactForm/contactForm";
+import CustomTextInput from "../../CustomTextInput/CustomTextInput.astro";
+import CustomDropDown from "../../CustomDropDown/CustomDropDown.astro";
+import InputButton from "./InputButton.astro";
+---
+
+<form id="container">
+    <div>
+        <CustomTextInput {...CONTACT_FORM_INPUT_PROPS.USER_NAMES} />
+        <CustomTextInput {...CONTACT_FORM_INPUT_PROPS.USER_SURNAMES} />
+    </div>
+    <div>
+        <CustomTextInput {...CONTACT_FORM_INPUT_PROPS.USER_EMAIL} />
+        <CustomTextInput {...CONTACT_FORM_INPUT_PROPS.USER_PHONE} />
+    </div>
+    <CustomDropDown {...CONTACT_FORM_INPUT_PROPS.COURSES_DROPDOWN} />
+    <InputButton />
+</form>
+
+<style lang="scss">
+    #container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        & > div:not(:nth-child(3)) {
+            display: flex;
+            gap: 30px;
+        }
+        @media (max-width: 925px) {
+            & > div {
+                flex-direction: column;
+            }
+        }
+    }
+</style>

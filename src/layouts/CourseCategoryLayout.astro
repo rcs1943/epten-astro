@@ -1,0 +1,19 @@
+---
+import type { CourseCategoryCardProps } from "../components/CourseCategoryList/CourseCategoryList.astro";
+import CoursesSection from "../components/Cursos/CoursesSection.astro";
+import Jumbotron, { JumbotronProps } from "../components/Jumbotron/Jumbotron.astro";
+import type { NavLinkTypes } from "../components/PageNavigator/PageNavigator.astro";
+import Layout from "./Layout.astro";
+
+interface Props {
+    jumbotronProps: JumbotronProps;
+    cards: CourseCategoryCardProps[];
+    navLinks: NavLinkTypes;
+}
+const { jumbotronProps, cards, navLinks } = Astro.props as Props;
+---
+
+<Layout>
+    <Jumbotron props={jumbotronProps} />
+    <CoursesSection cards={cards} navLinks={navLinks} />
+</Layout>
