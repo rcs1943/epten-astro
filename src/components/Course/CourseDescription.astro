@@ -1,0 +1,67 @@
+---
+export interface CourseDescriptionProps {
+    courseName: string;
+    courseDescription: string;
+}
+interface Props {
+    props: CourseDescriptionProps;
+}
+const { props } = Astro.props as Props;
+const { courseName, courseDescription } = props;
+---
+
+<section id="container">
+    <article class="content">
+        <h2>
+            ¿EN QUÉ CONSISTE EL CURSO DE
+            <span><b>{courseName}</b>?</span>
+        </h2>
+        <p>{courseDescription}</p>
+    </article>
+</section>
+
+<style lang="scss">
+    #container {
+        margin-top: 30px;
+        width: 100%;
+        @media (max-width: 650px) {
+            margin-top: 0;
+        }
+        & .content {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto 0;
+            width: calc(100% - 3rem);
+            max-width: 1080px;
+            gap: 20px;
+            h2 {
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                font-size: 40px;
+                color: var(--primary);
+                font-weight: 400;
+                @media (max-width: 650px) {
+                    font-size: 30px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 25px;
+                }
+            }
+            p {
+                font-size: 22px;
+                text-align: center;
+                line-height: 45px;
+                font-weight: 500;
+                color: var(--gray-1);
+                @media (max-width: 650px) {
+                    font-size: 20px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 17px;
+                    line-height: 35px;
+                }
+            }
+        }
+    }
+</style>

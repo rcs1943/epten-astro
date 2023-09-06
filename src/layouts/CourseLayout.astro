@@ -1,0 +1,36 @@
+---
+import Jumbotron, { JumbotronProps } from "../components/Jumbotron/Jumbotron.astro";
+import PageNavigator, { NavLinkTypes } from "../components/PageNavigator/PageNavigator.astro";
+import CourseDescription, { CourseDescriptionProps } from "../components/Course/CourseDescription.astro"
+import Layout from "./Layout.astro";
+import CourseObjectives, { CourseObjectivesContentType } from "../components/Course/CourseObjectives.astro";
+import CourseSchedules, { CourseSchedulesProps } from "../components/Course/CourseSchedules.astro"
+import Divider from "../components/Divider/Divider.astro"
+
+interface Props {
+    jumbotronProps: JumbotronProps;
+    navLinks: NavLinkTypes;
+    courseDescriptionProps: CourseDescriptionProps;
+    courseObjectivesProps: CourseObjectivesContentType;
+    courseSchedules: CourseSchedulesProps;
+}
+const { 
+    jumbotronProps, 
+    navLinks, 
+    courseDescriptionProps, 
+    courseObjectivesProps,
+    courseSchedules,
+} = Astro.props as Props;
+---
+
+<Layout>
+    <Jumbotron props={jumbotronProps} />
+    <Divider pixels="100px" />
+    <PageNavigator links={navLinks} />
+    <CourseDescription props={courseDescriptionProps} />
+    <Divider pixels="100px" />
+    <CourseObjectives content={courseObjectivesProps} />
+    <Divider pixels="100px" />
+    <CourseSchedules props={courseSchedules} />
+    <Divider pixels="100px" />
+</Layout>

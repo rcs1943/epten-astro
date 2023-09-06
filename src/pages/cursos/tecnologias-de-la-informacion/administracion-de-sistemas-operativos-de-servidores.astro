@@ -1,16 +1,18 @@
 ---
-import Jumbotron from "../../../components/Jumbotron/Jumbotron.astro";
-import PageNavigator from "../../../components/PageNavigator/PageNavigator.astro";
-import Layout from "../../../layouts/Layout.astro";
-import Divider from "../../../components/Divider/Divider.astro";
 import {
     ADMIN_SO_JUMBOTRON,
     ADMIN_SO_NAV_LINKS,
+    ADMIN_SO_DESCRIPTION,
+    ADMIN_SO_OBJECTIVES_CONTENT,
+    ADMIN_SO_SCHEDULES
 } from "../../../utils/constants/cursos/tecnologiaInformacion/adminSOServidores";
+import CourseLayout from "../../../layouts/CourseLayout.astro";
 ---
 
-<Layout>
-    <Jumbotron props={ADMIN_SO_JUMBOTRON} />
-    <Divider pixels="80px" />
-    <PageNavigator links={ADMIN_SO_NAV_LINKS} />
-</Layout>
+<CourseLayout
+    jumbotronProps={ADMIN_SO_JUMBOTRON}
+    navLinks={ADMIN_SO_NAV_LINKS}
+    courseDescriptionProps={ADMIN_SO_DESCRIPTION}
+    courseObjectivesProps={ADMIN_SO_OBJECTIVES_CONTENT}
+    courseSchedules={ADMIN_SO_SCHEDULES}
+/>
