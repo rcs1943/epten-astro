@@ -1,0 +1,81 @@
+<section id="container">
+    <header class="title-container">
+        <h2>CERTIFICACIONES</h2>
+    </header>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sed
+        eveniet ipsam sit sint corrupti blanditiis asperiores veniam dolore ex!
+    </p>
+    <ul>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+</section>
+
+<style lang="scss">
+    #container {
+        width: calc(100% - 4rem);
+        max-width: 900px;
+        outline: 30px solid #f4f4f3;
+        padding: 30px;
+        position: relative;
+        @media (max-width: 900px) {
+            width: calc(100% - 8rem);
+        }
+        @media (max-width: 500px) {
+            width: calc(100% - 3rem);
+            outline: 20px solid #f4f4f3;
+            padding: 20px;
+        }
+        .title-container {
+            position: absolute;
+            top: -60px;
+            left: -15px;
+            background-color: var(--primary);
+            padding: 25px 35px;
+            width: 55%;
+            box-shadow: 10px -5px var(--fifth-color);
+            @media (max-width: 800px) {
+                left: unset;
+                width: 88%;
+            }
+            @media (max-width: 650px) {
+                left: -5px;
+                width: 100%;
+            }
+            h2 {
+                font-size: 36px;
+                color: var(--white);
+                @media (max-width: 900px) {
+                    font-size: 32px;
+                }
+                @media (max-width: 800px) {
+                    font-size: 32px;
+                }
+                @media (max-width: 650px) {
+                    text-align: center;
+                    font-size: 28px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 24px;
+                }
+            }
+        }
+        p {
+            font-size: 20px;
+            @media (max-width: 500px) {
+                font-size: 18px;
+            }
+        }
+        ul {
+            font-size: 20px;
+            @media (max-width: 500px) {
+                padding-left: 22px;
+                font-size: 18px;
+            }
+        }
+    }
+</style>

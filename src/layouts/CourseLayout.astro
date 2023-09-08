@@ -1,11 +1,26 @@
 ---
-import Jumbotron, { JumbotronProps } from "../components/Jumbotron/Jumbotron.astro";
-import PageNavigator, { NavLinkTypes } from "../components/PageNavigator/PageNavigator.astro";
-import CourseDescription, { CourseDescriptionProps } from "../components/Course/CourseDescription.astro"
+import Jumbotron, {
+    type JumbotronProps,
+} from "../components/Jumbotron/Jumbotron.astro";
+import PageNavigator, {
+    type NavLinkTypes,
+} from "../components/PageNavigator/PageNavigator.astro";
+import CourseDescription, {
+    type CourseDescriptionProps,
+} from "../components/Course/CourseDescription.astro";
 import Layout from "./Layout.astro";
-import CourseObjectives, { CourseObjectivesContentType } from "../components/Course/CourseObjectives.astro";
-import CourseSchedules, { CourseSchedulesProps } from "../components/Course/CourseSchedules.astro"
-import Divider from "../components/Divider/Divider.astro"
+import CourseObjectives, {
+    type CourseObjectivesContentType,
+} from "../components/Course/CourseObjectives.astro";
+import CourseSchedules, {
+    type CourseSchedulesProps,
+} from "../components/Course/CourseSchedules.astro";
+import Divider from "../components/Divider/Divider.astro";
+import CourseCycles, {
+    type CourseCyclesProps,
+} from "../components/Course/CourseCycles.astro";
+import CourseCertificates from "../components/Course/CourseCertificates.astro";
+import InscriptionForm from "../components/InscriptionForm/InscriptionForm.astro";
 
 interface Props {
     jumbotronProps: JumbotronProps;
@@ -13,24 +28,46 @@ interface Props {
     courseDescriptionProps: CourseDescriptionProps;
     courseObjectivesProps: CourseObjectivesContentType;
     courseSchedules: CourseSchedulesProps;
+    courseCycles: CourseCyclesProps[];
 }
-const { 
-    jumbotronProps, 
-    navLinks, 
-    courseDescriptionProps, 
+const {
+    jumbotronProps,
+    navLinks,
+    courseDescriptionProps,
     courseObjectivesProps,
     courseSchedules,
+    courseCycles,
 } = Astro.props as Props;
 ---
 
 <Layout>
     <Jumbotron props={jumbotronProps} />
-    <Divider pixels="100px" />
-    <PageNavigator links={navLinks} />
+    <Divider pixels="100px" mobilePixels="80px" />
+    <header id="navigator-header">
+        <PageNavigator links={navLinks} />
+    </header>
     <CourseDescription props={courseDescriptionProps} />
-    <Divider pixels="100px" />
+    <Divider pixels="100px" mobilePixels="70px" />
     <CourseObjectives content={courseObjectivesProps} />
-    <Divider pixels="100px" />
+    <Divider pixels="100px" mobilePixels="70px" />
     <CourseSchedules props={courseSchedules} />
     <Divider pixels="100px" />
+    <CourseCycles cycles={courseCycles} />
+    <Divider pixels="180px" />
+    <CourseCertificates />
+    <Divider pixels="120px" />
+    <InscriptionForm />
+    <Divider pixels="120px" />
 </Layout>
+
+<style>
+    #navigator-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        @media (max-width: 650px) {
+            width: calc(100% - 15px);
+        }
+    }
+</style>

@@ -47,8 +47,8 @@ const { cards } = Astro.props as Props;
                 bottom: -50px;
                 height: 300px;
             }
-            @media (max-width: 600px) {
-                height: 480px;
+            @media (max-width: 650px) {
+                height: 90%;
             }
         }
         &::after {
@@ -67,10 +67,11 @@ const { cards } = Astro.props as Props;
                 bottom: -30px;
                 height: 400px;
             }
-            @media (max-width: 600px) {
-                height: 620px;
+            @media (max-width: 650px) {
+                height: 95%;
                 left: -20px;
                 right: -20px;
+                border-width: 6px;
             }
         }
         @media (max-width: 820px) {

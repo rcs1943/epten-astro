@@ -14,27 +14,27 @@ export const TI_COURSES_CARDS: CourseCategoryCardProps[] = [
     },
     {
         title: "Base de Datos con Access",
-        linkPath: "./base-de-datos-con-access",
+        linkPath: "./tecnologias-de-la-informacion/base-de-datos-con-access",
         imgPath: "/images/cursos/ti/COURSE_DB_ACCESS.jpg",
     },
     {
         title: "Fundamentos y Algoritmos de Programación",
-        linkPath: "./fundamentos-y-algoritmos-de-programacion",
+        linkPath: "./tecnologias-de-la-informacion/fundamentos-y-algoritmos-de-programacion",
         imgPath: "/images/cursos/ti/COURSE_ALGORITHMS.jpg",
     },
     {
         title: "Programación de Aplicaciones de Escritorio",
-        linkPath: "./programacion-de-aplicaciones-de-escritorio",
+        linkPath: "./tecnologias-de-la-informacion/programacion-de-aplicaciones-de-escritorio",
         imgPath: "/images/cursos/ti/COURSE_DESK.jpg",
     },
     {
         title: "Programación BackEnd",
-        linkPath: "./programacion-backend",
+        linkPath: "./tecnologias-de-la-informacion/programacion-backend",
         imgPath: "/images/cursos/ti/COURSE_BACKEND.jpg",
     },
     {
         title: "Programación Web FrontEnd",
-        linkPath: "./programacion-web-frontend",
+        linkPath: "./tecnologias-de-la-informacion/programacion-web-frontend",
         imgPath: "/images/cursos/ti/COURSE_FRONTEND.jpg",
     },
 ];

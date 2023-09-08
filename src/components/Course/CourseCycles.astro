@@ -1,0 +1,142 @@
+---
+export interface CourseCyclesProps {
+    number: number;
+    courses: string[];
+};
+interface Props {
+    cycles: CourseCyclesProps[];
+}
+const { cycles } = Astro.props as Props;
+---
+
+<section id="container">
+    <header class="title-container">
+        <h2>Plan de estudios</h2>
+    </header>
+    <article class="wrapper">
+        {
+            cycles.map(cycle => (
+                <div class="cycle">
+                    <div class="title">
+                        <h4>Ciclo</h4>
+                        <h3>{cycle.number}</h3>
+                    </div>
+                    <hr />
+                    <ul>
+                        {cycle.courses.map(course => (
+                            <li>{course}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))
+        }
+    </article>
+</section>
+
+<style lang="scss">
+    #container {
+        text-align: center;
+        width: 100%;
+        max-width: 1920px;
+        & .title-container {
+            border: 8px solid var(--primary);
+            border-bottom: 0;
+            margin: 0 auto 0;
+            width: calc(100% - 3rem);
+            max-width: 960px;
+            @media (max-width: 650px) {
+                width: calc(100% - 1rem);
+                border-width: 6px;
+            }
+            h2 {
+                font-size: 50px;
+                color: var(--primary);
+                background-color: var(--white);
+                margin-top: -33px;
+                padding: 0 30px;
+                display: inline-block;
+                margin-bottom: 20px;
+                @media (max-width: 600px) {
+                    font-size: 40px;
+                    padding: 0 10px;
+                }
+                @media (max-width: 500px) {
+                    font-size: 34px;
+                }
+            }
+        }
+        & .wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 50px 80px;
+            flex-wrap: wrap;
+            position: relative;
+            border: 8px solid var(--primary);
+            border-top: 0;
+            margin: 50px auto 0;
+            width: calc(100% - 3rem);
+            max-width: 960px;
+            padding: 60px 80px;
+            @media (max-width: 650px) {
+                width: calc(100% - 1rem);
+                margin: 30px auto 0;
+                border-width: 6px;
+            }
+            @media (max-width: 500px) {
+                padding: 60px 49px;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                border-bottom: 3px solid var(--fifth-color);
+                border-left: 3px solid var(--fifth-color);
+                border-right: 3px solid var(--fifth-color);
+                bottom: -25px;
+                height: 95%;
+                left: 15px;
+                right: 15px;
+                box-sizing: inherit;
+                z-index: -1;
+            }
+            & .cycle {
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 -20px 0 var(--fifth-color);
+                padding: 25px 0;
+                width: 352px;
+                @media (max-width: 500px) {
+                    padding: 15px 0;
+                }
+                & .title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    h3 {
+                        color: var(--primary);
+                        font-size: 50px;
+                    }
+                    h4 {
+                        color: var(--primary);
+                        font-size: 40px;
+                    }
+                }
+                hr {
+                    width: 100%;
+                    margin: 20px 0;
+                    border: 3px dotted var(--fifth-color);
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    list-style: none;
+                    padding: 0;
+                    li {
+                        text-align: left;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+</style>

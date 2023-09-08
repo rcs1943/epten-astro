@@ -1,6 +1,6 @@
 ---
 import PromoCourseBox, {
-    PromoCoursesBoxProps,
+    type PromoCoursesBoxProps,
 } from "../PromoCourseBox/PromoCourseBox.astro";
 import MainTitleHeader from "../TitleHeaders/MainTitleHeader.astro";
 type Props = {
@@ -41,7 +41,7 @@ const { promoCourses } = Astro.props as Props;
             width: 65%;
             max-width: 950px;
             @media (max-width: 600px) {
-                width: 92%;
+                width: 99%;
             }
         }
         .courses-wrapper {

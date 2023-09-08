@@ -1,0 +1,20 @@
+---
+import CourseLayout from "../../../layouts/CourseLayout.astro";
+import {
+    ALGORITHMS_JUMBOTRON,
+    ALGORITHMS_NAV_LINKS,
+    ALGORITHMS_DESCRIPTION,
+    ALGORITHMS_OBJECTIVES_CONTENT,
+    ALGORITHMS_SCHEDULES,
+    ALGORITHMS_CYCLES,
+} from "../../../utils/constants/cursos/tecnologiaInformacion/algoritmos";
+---
+
+<CourseLayout
+    jumbotronProps={ALGORITHMS_JUMBOTRON}
+    navLinks={ALGORITHMS_NAV_LINKS}
+    courseDescriptionProps={ALGORITHMS_DESCRIPTION}
+    courseObjectivesProps={ALGORITHMS_OBJECTIVES_CONTENT}
+    courseSchedules={ALGORITHMS_SCHEDULES}
+    courseCycles={ALGORITHMS_CYCLES}
+/>

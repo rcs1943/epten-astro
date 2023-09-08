@@ -18,8 +18,6 @@ import CategoriesSection from "../components/Index/CategoriesSection.astro";
     <CategoriesSection categoryCards={CATEGORY_CARDS} />
     <PresentationBox presentationBoxProps={INDEX_PRESENTATION_BOX} />
     <Divider pixels="100px" />
-    <InfoSchema infoSchemaProps={NEXT_STEP_INFO} />
+    <InfoSchema infoSchemaProps={{...NEXT_STEP_INFO, linebreak: true}} />
     <Divider pixels="100px" />
 </Layout>
-
-<style lang="scss"></style>

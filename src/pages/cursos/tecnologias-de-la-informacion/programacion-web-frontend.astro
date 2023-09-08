@@ -1,0 +1,20 @@
+---
+import CourseLayout from "../../../layouts/CourseLayout.astro";
+import {
+    FRONTEND_JUMBOTRON,
+    FRONTEND_NAV_LINKS,
+    FRONTEND_DESCRIPTION,
+    FRONTEND_OBJECTIVES_CONTENT,
+    FRONTEND_SCHEDULES,
+    FRONTEND_CYCLES,
+} from "../../../utils/constants/cursos/tecnologiaInformacion/frontend";
+---
+
+<CourseLayout
+    jumbotronProps={FRONTEND_JUMBOTRON}
+    navLinks={FRONTEND_NAV_LINKS}
+    courseDescriptionProps={FRONTEND_DESCRIPTION}
+    courseObjectivesProps={FRONTEND_OBJECTIVES_CONTENT}
+    courseSchedules={FRONTEND_SCHEDULES}
+    courseCycles={FRONTEND_CYCLES}
+/>

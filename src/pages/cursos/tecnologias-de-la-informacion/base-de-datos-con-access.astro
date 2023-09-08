@@ -1,0 +1,20 @@
+---
+import CourseLayout from "../../../layouts/CourseLayout.astro";
+import {
+    ACCESS_BD_JUMBOTRON,
+    ACCESS_BD_NAV_LINKS,
+    ACCESS_BD_DESCRIPTION,
+    ACCESS_BD_OBJECTIVES_CONTENT,
+    ACCESS_BD_SCHEDULES,
+    ACCESS_BD_CYCLES,
+} from "../../../utils/constants/cursos/tecnologiaInformacion/BDAccess";
+---
+
+<CourseLayout
+    jumbotronProps={ACCESS_BD_JUMBOTRON}
+    navLinks={ACCESS_BD_NAV_LINKS}
+    courseDescriptionProps={ACCESS_BD_DESCRIPTION}
+    courseObjectivesProps={ACCESS_BD_OBJECTIVES_CONTENT}
+    courseSchedules={ACCESS_BD_SCHEDULES}
+    courseCycles={ACCESS_BD_CYCLES}
+/>

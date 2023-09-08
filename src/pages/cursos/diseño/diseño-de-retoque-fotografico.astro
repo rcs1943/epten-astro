@@ -1,0 +1,20 @@
+---
+import CourseLayout from "../../../layouts/CourseLayout.astro";
+import {
+    PHOTO_RETOUCH_JUMBOTRON,
+    PHOTO_RETOUCH_NAV_LINKS,
+    PHOTO_RETOUCH_DESCRIPTION,
+    PHOTO_RETOUCH_OBJECTIVES_CONTENT,
+    PHOTO_RETOUCH_SCHEDULES,
+    PHOTO_RETOUCH_CYCLES,
+} from "../../../utils/constants/cursos/diseño/diseñoRetoqueFotografico";
+---
+
+<CourseLayout
+    jumbotronProps={PHOTO_RETOUCH_JUMBOTRON}
+    navLinks={PHOTO_RETOUCH_NAV_LINKS}
+    courseDescriptionProps={PHOTO_RETOUCH_DESCRIPTION}
+    courseObjectivesProps={PHOTO_RETOUCH_OBJECTIVES_CONTENT}
+    courseSchedules={PHOTO_RETOUCH_SCHEDULES}
+    courseCycles={PHOTO_RETOUCH_CYCLES}
+/>
