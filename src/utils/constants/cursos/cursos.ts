@@ -1,4 +1,4 @@
-import type { BenefitProps } from "../../../components/Cursos/BenefitList/types";
+import type { Benefit } from "../../../components/Cursos/BenefitList/types";
 import type { InfoSchemaProps } from "../../../components/InfoSchema/InfoSchema.astro";
 import type { JumbotronProps } from "../../../components/Jumbotron/Jumbotron.astro";
 
@@ -7,25 +7,25 @@ export const COURSES_JUMBOTRON: JumbotronProps = {
     bottomTitle: "CURSOS",
     imagePath: "/images/cursos/COURSES_HERO.jpg",
 };
-export const BENEFIT_CARDS: BenefitProps[] = [
+export const BENEFIT_CARDS: Benefit[] = [
     {
         imgPath: "/images/cursos/ICON_BENEFIT.jpg",
-        title: "Beneficio",
+        title: "Beneficio1",
         content: "Many of our programs can be completed in as few as 40 weeks.",
     },
     {
         imgPath: "/images/cursos/ICON_BENEFIT.jpg",
-        title: "Beneficio",
+        title: "Beneficio2",
         content: "Many of our programs can be completed in as few as 40 weeks.",
     },
     {
         imgPath: "/images/cursos/ICON_BENEFIT.jpg",
-        title: "Beneficio",
+        title: "Beneficio3",
         content: "Many of our programs can be completed in as few as 40 weeks.",
     },
     {
         imgPath: "/images/cursos/ICON_BENEFIT.jpg",
-        title: "Beneficio",
+        title: "Beneficio4",
         content: "Many of our programs can be completed in as few as 40 weeks.",
     },
 ];

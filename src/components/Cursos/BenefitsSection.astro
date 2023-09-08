@@ -1,10 +1,10 @@
 ---
 import MainTitleHeader from "../TitleHeaders/MainTitleHeader.astro";
 import BenefitList from "./BenefitList/BenefitList";
-import type { BenefitProps } from "./BenefitList/types";
+import type { Benefit } from "./BenefitList/types";
 
 interface Props {
-    benefitCards: BenefitProps[];
+    benefitCards: Benefit[];
 }
 const { benefitCards } = Astro.props as Props;
 ---

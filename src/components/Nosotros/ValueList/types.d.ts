@@ -1,4 +1,4 @@
-export interface ValuesProps {
+export interface Value {
     icon: string;
     title: string;
     content: string;

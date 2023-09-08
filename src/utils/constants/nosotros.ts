@@ -1,6 +1,6 @@
 import type { InfoSchemaProps } from "../../components/InfoSchema/InfoSchema.astro";
 import type { JumbotronProps } from "../../components/Jumbotron/Jumbotron.astro";
-import type { ValuesProps } from "../../components/Nosotros/ValueList/types";
+import type { Value } from "../../components/Nosotros/ValueList/types";
 import type { PresentationBoxProps } from "../../components/PresentationBox/PresentationBox.astro";
 
 export const ABOUT_US_JUMBOTRON: JumbotronProps = {
@@ -41,7 +41,7 @@ export const VISION: InfoSchemaProps = {
         "Ser una institución líder en educación, transformando la vida de sus estudiantes y la comunidad.",
 };
 
-export const VALUE_CARDS: ValuesProps[] = [
+export const VALUE_CARDS: Value[] = [
     {
         icon: "/images/nosotros/ICON_EDUCACION.svg",
         title: "Educación",

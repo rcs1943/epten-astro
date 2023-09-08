@@ -1,4 +1,4 @@
-import type { SliderControllersType } from "../../utils/hooks/types";
+import type { SliderControllersType } from "../../../../utils/hooks/types";
 
 export type SliderSlickPagerProps = {
     slides: unknown[];

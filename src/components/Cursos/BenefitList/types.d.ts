@@ -1,8 +1,8 @@
-export interface BenefitProps {
+export type Benefit = {
     imgPath: string;
     title: string;
     content: string;
 }
 export type BenefitListProps = {
-    benefits: BenefitProps[];
+    benefits: Benefits[];
 };

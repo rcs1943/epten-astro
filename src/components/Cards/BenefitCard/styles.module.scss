@@ -6,6 +6,7 @@
     background-color: var(--primary);
     color: var(--white);
     padding: 40px 0;
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
     @media (max-width: 650px) {
         flex-direction: column;
         text-align: center;

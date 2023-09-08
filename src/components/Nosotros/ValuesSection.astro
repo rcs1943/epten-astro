@@ -1,9 +1,9 @@
 ---
 import MiniTitleHeader from "../TitleHeaders/MiniTitleHeader.astro";
 import ValueList from "./ValueList/ValueList";
-import type { ValuesProps } from "./ValueList/types";
+import type { Value } from "./ValueList/types";
 interface Props {
-    valueCards: ValuesProps[];
+    valueCards: Value[];
 }
 const { valueCards } = Astro.props as Props;
 ---
