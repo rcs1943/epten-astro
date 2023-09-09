@@ -2,12 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import type { SliderProps } from "./types";
 import useSlider from "../../utils/hooks/useSlider";
 import SliderSlickPager from "./components/SliderSlickPager/SliderSlickPager";
-import style from "./styles.module.scss"
+import style from "./styles.module.scss";
 import { CARD_LIST_GAP } from "../../utils/constants/slider";
 import { getIsMobile } from "../../utils/deviceSize";
 
-function Slider<I>({ slides, renderSlides }: SliderProps<I>) {
-    const [screenRefWidth, setScreenRefWidth] = useState<number | undefined>();
+function Slider<I>({
+    slides,
+    renderSlides,
+    adjustCardWidthResponsive,
+    darkMode
+}: SliderProps<I>) {
     const isMobile = getIsMobile();
     const $screen = useRef<HTMLDivElement>(null);
     const $list = useRef<HTMLDivElement>(null);
@@ -20,7 +24,7 @@ function Slider<I>({ slides, renderSlides }: SliderProps<I>) {
     } = useSlider($list, slides.length, CARD_LIST_GAP);
     useEffect(() => {
         const handleResize = () =>
-            setScreenRefWidth($screen.current?.clientWidth);
+            adjustCardWidthResponsive($screen.current?.clientWidth);
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => {
@@ -53,10 +57,11 @@ function Slider<I>({ slides, renderSlides }: SliderProps<I>) {
                     slides={slides}
                     controllers={controllers}
                     idxActiveSlide={idxActiveSlide}
+                    darkMode={darkMode}
                 />
             )}
         </article>
     );
-};
+}
 
 export default Slider;

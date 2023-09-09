@@ -1,0 +1,93 @@
+[
+    {
+        "id": "tecnologias-de-la-informacion",
+        "jumbotron": {
+            "topTitle": "TECNOLOGÍAS DE",
+            "bottomTitle": "LA INFORMACIÓN",
+            "imagePath": "/images/cursos/ti/HERO_IMG.jpg"
+        },
+        "cards": [
+            {
+                "title": "Administración de Sistemas Operativos de Servidores",
+                "linkPath": "/cursos/tecnologias-de-la-informacion/administracion-de-sistemas-operativos-de-servidores",
+                "imgPath": "/images/cursos/ti/COURSE_ADMIN_OS_SERV.jpg"
+            },
+            {
+                "title": "Base de Datos con Access",
+                "linkPath": "./tecnologias-de-la-informacion/base-de-datos-con-access",
+                "imgPath": "/images/cursos/ti/COURSE_DB_ACCESS.jpg"
+            },
+            {
+                "title": "Fundamentos y Algoritmos de Programación",
+                "linkPath": "./tecnologias-de-la-informacion/fundamentos-y-algoritmos-de-programacion",
+                "imgPath": "/images/cursos/ti/COURSE_ALGORITHMS.jpg"
+            },
+            {
+                "title": "Programación de Aplicaciones de Escritorio",
+                "linkPath": "./tecnologias-de-la-informacion/programacion-de-aplicaciones-de-escritorio",
+                "imgPath": "/images/cursos/ti/COURSE_DESK.jpg"
+            },
+            {
+                "title": "Programación BackEnd",
+                "linkPath": "./tecnologias-de-la-informacion/programacion-backend",
+                "imgPath": "/images/cursos/ti/COURSE_BACKEND.jpg"
+            },
+            {
+                "title": "Programación Web FrontEnd",
+                "linkPath": "./tecnologias-de-la-informacion/programacion-web-frontend",
+                "imgPath": "/images/cursos/ti/COURSE_FRONTEND.jpg"
+            }
+        ],
+        "navLink": ["TECNOLOGÍAS DE LA INFORMACIÓN"]
+    },
+    {
+        "id": "diseño",
+        "jumbotron": {
+            "bottomTitle": "DISEÑO",
+            "imagePath": "/images/cursos/diseño/HERO_IMG.jpg"
+        },
+        "cards": [
+            {
+                "title": "Diseño Gráfico Publicitario",
+                "linkPath": "./diseño/diseño-grafico-publicitario",
+                "imgPath": "/images/cursos/diseño/COURSE_GRAPHIC_DESIGN.jpg"
+            },
+            {
+                "title": "Diseño de Retoque Fotográfico",
+                "linkPath": "./diseño/diseño-de-retoque-fotografico",
+                "imgPath": "/images/cursos/diseño/COURSE_PHOTO_RETOUCH.jpg"
+            }
+        ],
+        "navLink": ["DISEÑO"]
+    },
+    {
+        "id": "negocios",
+        "jumbotron": {
+            "bottomTitle": "NEGOCIOS",
+            "imagePath": "/images/cursos/negocios/HERO_IMG.jpg"
+        },
+        "cards": [
+            {
+                "title": "Excel Para la Producción Comercial",
+                "linkPath": "./negocios/excel-para-la-produccion-comercial",
+                "imgPath": "/images/cursos/negocios/COURSE_EXCEL_COMM_PROD.jpg"
+            }
+        ],
+        "navLink": ["NEGOCIOS"]
+    },
+    {
+        "id": "ofimatica",
+        "jumbotron": {
+            "bottomTitle": "OFIMÁTICA",
+            "imagePath": "/images/cursos/ofimatica/HERO_IMG.jpg"
+        },
+        "cards": [
+            {
+                "title": "Ofimática Para Escolares",
+                "linkPath": "./ofimatica/ofimatica-para-escolares",
+                "imgPath": "/images/cursos/ofimatica/COURSE_OFFICE_SCHOOL.jpg"
+            }
+        ],
+        "navLink": ["OFIMÁTICA"]
+    }
+]

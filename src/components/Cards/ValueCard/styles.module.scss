@@ -22,6 +22,9 @@
     @media (max-width: 938px) {
         width: 70%;
     }
+    @media (max-width: 650px) {
+        width: unset;
+    }
     h4 {
         color: var(--tertiary);
         font-size: 30px;

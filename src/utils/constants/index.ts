@@ -20,22 +20,22 @@ export const PROMO_COURSES: Omit<PromoCoursesBoxProps, "idx">[] = [
 export const CATEGORY_CARDS: CourseCategoryCardProps[] = [
     {
         title: "Tecnologías de la información",
-        linkPath: "./cursos/tecnologias-de-la-informacion",
+        linkPath: "/cursos/tecnologias-de-la-informacion",
         imgPath: "/images/cursos/CATEGORY_IT.jpg",
     },
     {
         title: "Diseño",
-        linkPath: "./cursos/diseño",
+        linkPath: "/cursos/diseño",
         imgPath: "/images/cursos/CATEGORY_DESIGN.jpg",
     },
     {
         title: "Negocios",
-        linkPath: "./cursos/negocios",
+        linkPath: "/cursos/negocios",
         imgPath: "/images/cursos/CATEGORY_BUSINESS.jpg",
     },
     {
         title: "Ofimática",
-        linkPath: "./cursos/ofimatica",
+        linkPath: "/cursos/ofimatica",
         imgPath: "/images/cursos/CATEGORY_OFIMATICA.jpg",
     },
 ];

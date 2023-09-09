@@ -1,0 +1,612 @@
+[
+    {
+        "id": "administracion-de-sistemas-operativos-de-servidores",
+        "category": "tecnologias-de-la-informacion",
+        "jumbotron": {
+            "topTitle": "Administración de SO",
+            "bottomTitle": "de Servidores",
+            "imagePath": "/images/cursos/ti/servidores/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "TECNOLOGÍAS DE LA INFORMACIÓN",
+            "ADMINISTRACIÓN DE SISTEMAS OPERATIVOS DE SERVIDORES"
+        ],
+        "description": {
+            "courseName": "ADMINISTRACIÓN DE SISTEMAS OPERATIVOS DE SERVIDORES",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "base-de-datos-con-access",
+        "category": "tecnologias-de-la-informacion",
+        "jumbotron": {
+            "topTitle": "Base de Datos con",
+            "bottomTitle": "Access",
+            "imagePath": "/images/cursos/ti/access/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "TECNOLOGÍAS DE LA INFORMACIÓN",
+            "BASE DE DATOS CON ACCESS"
+        ],
+        "description": {
+            "courseName": "BASE DE DATOS CON ACCESS",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fundamentos-y-algoritmos-de-programacion",
+        "category": "tecnologias-de-la-informacion",
+        "jumbotron": {
+            "topTitle": "Fundamentos y Algoritmos",
+            "bottomTitle": "de Programación",
+            "imagePath": "/images/cursos/ti/algoritmos/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "TECNOLOGÍAS DE LA INFORMACIÓN",
+            "FUNDAMENTOS Y ALGORITMOS DE PROGRAMACIÓN"
+        ],
+        "description": {
+            "courseName": "FUNDAMENTOS Y ALGORITMOS DE PROGRAMACIÓN",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "programacion-de-aplicaciones-de-escritorio",
+        "category": "tecnologias-de-la-informacion",
+        "jumbotron": {
+            "topTitle": "Programación de",
+            "bottomTitle": "Aplicaciones de Escritorio",
+            "imagePath": "/images/cursos/ti/programacion-escritorio/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "TECNOLOGÍAS DE LA INFORMACIÓN",
+            "PROGRAMACIÓN DE APLICACIONES DE ESCRITORIO"
+        ],
+        "description": {
+            "courseName": "PROGRAMACIÓN DE APLICACIONES DE ESCRITORIO",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "programacion-backend",
+        "category": "tecnologias-de-la-informacion",
+        "jumbotron": {
+            "topTitle": "Programación",
+            "bottomTitle": "BackEnd",
+            "imagePath": "/images/cursos/ti/backend/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "TECNOLOGÍAS DE LA INFORMACIÓN",
+            "PROGRAMACIÓN BACKEND"
+        ],
+        "description": {
+            "courseName": "PROGRAMACIÓN BACKEND",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "programacion-web-frontend",
+        "category": "tecnologias-de-la-informacion",
+        "jumbotron": {
+            "topTitle": "Programación",
+            "bottomTitle": "Web FrontEnd",
+            "imagePath": "/images/cursos/ti/frontend/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "TECNOLOGÍAS DE LA INFORMACIÓN",
+            "PROGRAMACIÓN WEB FRONTEND"
+        ],
+        "description": {
+            "courseName": "PROGRAMACIÓN WEB FRONTEND",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "diseño-grafico-publicitario",
+        "category": "diseño",
+        "jumbotron": {
+            "topTitle": "Diseño Gráfico",
+            "bottomTitle": "Publicitario",
+            "imagePath": "/images/cursos/diseño/diseño-grafico-publicitario/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "DISEÑO",
+            "DISEÑO GRÁFICO PUBLICITARIO"
+        ],
+        "description": {
+            "courseName": "DISEÑO GRÁFICO PUBLICITARIO",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "diseño-de-retoque-fotografico",
+        "category": "diseño",
+        "jumbotron": {
+            "topTitle": "Diseño de",
+            "bottomTitle": "Retoque Fotográfico",
+            "imagePath": "/images/cursos/diseño/diseño-retoque-fotografico/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "DISEÑO",
+            "DISEÑO DE RETOQUE FOTOGRÁFICO"
+        ],
+        "description": {
+            "courseName": "DISEÑO DE RETOQUE FOTOGRÁFICO",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "excel-para-la-produccion-comercial",
+        "category": "negocios",
+        "jumbotron": {
+            "topTitle": "Excel para la",
+            "bottomTitle": "Producción Comercial",
+            "imagePath": "/images/cursos/negocios/excel-produccion-comercial/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "NEGOCIOS",
+            "EXCEL PARA LA PRODUCCIÓN COMERCIAL"
+        ],
+        "description": {
+            "courseName": "EXCEL PARA LA PRODUCCIÓN COMERCIAL",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ofimatica-para-escolares",
+        "category": "ofimatica",
+        "jumbotron": {
+            "topTitle": "Ofimática para",
+            "bottomTitle": "Escolares",
+            "imagePath": "/images/cursos/ofimatica/ofimatica-escolares/HERO_IMG.jpg"
+        },
+        "navLinks": [
+            "OFIMÁTICA",
+            "OFIMÁTICA PARA ESCOLARES"
+        ],
+        "description": {
+            "courseName": "OFIMÁTICA PARA ESCOLARES",
+            "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor"
+        },
+        "objectives": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisl in ligula condimentum pulvinar. Praesent mattis, ipsum eu ullamcorper suscipit, massa dui lacinia massa, ac bibendum lorem dolor et mauris. Curabitur laoreet mollis arcu, a interdum turpis sodales sed. Ut vel egestas tortor",
+        "schedules": {
+            "daytimeSchedule": "7:00 a.m. - 10:45 a.m.",
+            "afternoonSchedule": "15:00 p.m. - 18:45 p.m.",
+            "nightSchedule": "19:00 p.m. - 22:45 p.m."
+        },
+        "cycles": [
+            {
+                "number": 1,
+                "courses": [
+                    "MATEMÁTICA BÁSICA",
+                    "REALIDAD NACIONAL REGIONAL Y UNIVERSITARIA",
+                    "INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS",
+                    "METODOLOGÍA DEL APRENDIZAJE"
+                ]
+            },
+            {
+                "number": 2,
+                "courses": [
+                    "ÁLGEBRA",
+                    "FÍSICA",
+                    "DEFENSA NACIONAL, DESASTRES NATURALES Y EDUCACION AMBIENTAL",
+                    "REDACCION Y TECNICAS DE COMUNICACIÓN"
+                ]
+            },
+            {
+                "number": 3,
+                "courses": [
+                    "FISICA APLICADA A LA INGENERÍA DE SISTEMAS",
+                    "CÁLCULO INTEGRAL APLICADO A LA INGENIERIA DE SISTEMAS",
+                    "ESTADÍSTICA APLICADA",
+                    "ALGORITMOS Y ESTRUCTURA DE DATOS I"
+                ]
+            },
+            {
+                "number": 4,
+                "courses": [
+                    "ARQUITECTURA DE COMPUTADORES",
+                    "ELECTRÓNICA DIGITAL II",
+                    "PROGRAMACIÓN ORIENTADA A OBJETOS I",
+                    "LENGUAJE DE PROGRAMACIÓN II"
+                ]
+            }
+        ]
+    }
+]

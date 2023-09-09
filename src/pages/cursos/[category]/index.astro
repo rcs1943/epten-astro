@@ -1,0 +1,22 @@
+---
+import CourseCategoryLayout from "../../../layouts/CourseCategoryLayout.astro";
+import { getLocalDataById } from "../../../services/fetchLocalData";
+import categories from "../../../data/categories.json";
+
+const { category } = Astro.params;
+if (!category) return;
+
+const courseCategory = getLocalDataById(categories, category);
+console.log(courseCategory);
+export function getStaticPaths() {
+    return categories.map(category => ({
+        params: { category: category.id },
+    }));
+}
+---
+
+<CourseCategoryLayout
+    jumbotronProps={courseCategory.jumbotron}
+    cards={courseCategory.cards}
+    navLinks={courseCategory.navLink}
+/>

@@ -1,5 +1,5 @@
 ---
-import Card from "./components/Card.astro";
+import PresentationCardList from "./PresentationCardList";
 export interface PresentationBoxProps {
     title?: string;
     content: string;
@@ -23,17 +23,7 @@ const { title, content, cardList, button } = presentationBoxProps;
     <article class="wrapper">
         {title && <h2>{title}</h2>}
         <p>{content}</p>
-        <div class="cards-wrapper">
-            {
-                cardList.map((card, idx) => (
-                    <Card
-                        key={idx}
-                        iconPath={card.iconPath}
-                        content={card.content}
-                    />
-                ))
-            }
-        </div>
+        <PresentationCardList presentationCards={cardList} client:only />
         {
             button && (
                 <div class="link-btn-wrapper">
@@ -87,16 +77,12 @@ const { title, content, cardList, button } = presentationBoxProps;
             }
         }
     }
-    .cards-wrapper {
-        display: grid;
-        place-content: center;
-        grid-template-columns: repeat(auto-fill, 217.5px);
-        gap: 30px;
-        margin: 20px 0;
-    }
     .link-btn-wrapper {
         display: flex;
         justify-content: center;
+        @media (max-width: 650px) {
+            margin-top: 30px; 
+        }
         a {
             text-decoration: none;
             border: 4px solid var(--fifth-color);

@@ -1,0 +1,39 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--primary);
+    text-align: center;
+    padding: 30px 15px;
+    width: 48%;
+    @media (max-width: 650px) {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 0;
+        width: 100%;
+        min-width: 325px;
+    }
+    img {
+        @media (max-width: 600px) {
+            width: 50px;
+        }
+    }
+    h4 {
+        margin-top: 15px;
+        @media (max-width: 600px) {
+            font-size: 12px;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: var(--fifth-color);
+    }
+}
