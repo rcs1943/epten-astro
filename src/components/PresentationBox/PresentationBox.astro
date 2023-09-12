@@ -36,6 +36,8 @@ const { title, content, cardList, button } = presentationBoxProps;
 
 <style lang="scss">
     .presentation-box {
+        display: flex;
+        justify-content: center;
         width: 100%;
         max-width: 1920px;
         background-color: var(--primary);
@@ -44,8 +46,7 @@ const { title, content, cardList, button } = presentationBoxProps;
     .wrapper {
         display: flex;
         flex-direction: column;
-        margin: 0 auto 0;
-        width: calc(100% - 2rem);
+        width: 100%;
         max-width: 960px;
         color: var(--white);
         gap: 35px;
@@ -70,7 +71,6 @@ const { title, content, cardList, button } = presentationBoxProps;
         p {
             font-size: 24px;
             line-height: 35px;
-            margin-top: 0;
             text-align: center;
             @media (max-width: 600px) {
                 font-size: 18px;

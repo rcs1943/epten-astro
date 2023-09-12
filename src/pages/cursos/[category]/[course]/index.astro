@@ -7,7 +7,7 @@ const { course } = Astro.params;
 if (!course) return;
 
 const courseData = getLocalDataById(courses, course);
-console.log(courseData);
+
 export function getStaticPaths() {
     return courses.map(course => ({
         params: {

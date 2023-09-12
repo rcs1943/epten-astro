@@ -43,6 +43,7 @@ const useSlider = (
     const handleTouchEnd = (): void => {
         setDragging(false);
         if (!$list.current) return;
+
         const listWidth: number = $list.current.clientWidth;
         const cardWidth: number = $list.current.children[0].clientWidth;
         let newTranslateX: number = currentTranslateX;

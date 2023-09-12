@@ -15,8 +15,9 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 35px;
-    width: unset;
+    width: 100%;
     @media (max-width: 650px) {
+        width: unset;
         gap: 30px;
         flex-wrap: nowrap;
         justify-content: flex-start;

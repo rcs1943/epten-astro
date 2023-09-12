@@ -29,6 +29,9 @@ const { categoryCards } = Astro.props as Props;
         max-width: 1920px;
         margin: 120px 100px;
         gap: 60px;
+        @media (max-width: 650px) {
+            gap: 50px;
+        }
     }
     .title-wrapper {
         display: flex;

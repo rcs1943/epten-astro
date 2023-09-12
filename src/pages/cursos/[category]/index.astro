@@ -7,7 +7,7 @@ const { category } = Astro.params;
 if (!category) return;
 
 const courseCategory = getLocalDataById(categories, category);
-console.log(courseCategory);
+
 export function getStaticPaths() {
     return categories.map(category => ({
         params: { category: category.id },

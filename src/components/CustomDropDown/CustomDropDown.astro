@@ -10,30 +10,52 @@ interface Props {
     }[];
     error?: string;
 }
-const { name, dataTitle, dataRequired = true, defaultValue, optionList, error } = Astro.props as Props;
+const {
+    name,
+    dataTitle,
+    dataRequired = true,
+    defaultValue,
+    optionList,
+    error,
+} = Astro.props as Props;
 ---
 
-<div id="wrapper">
-    <select name={name} data-title={dataTitle} data-required={dataRequired}>
-        <option disabled selected>
-            {defaultValue}
-        </option>
-        {optionList.map(({label, options}) => {
-            return (
-                <optgroup label={label}>
-                    {options.map(option => <option value={option}>{option}</option>)}
-                </optgroup>
-            )
-        })}
-    </select>
-    {error && <span>{error}</span>}
+<div id="container">
+    <div class="wrapper">
+        <select name={name} data-title={dataTitle} data-required={dataRequired}>
+            <option disabled selected>
+                {defaultValue}
+            </option>
+            {
+                optionList.map(({ label, options }) => {
+                    return (
+                        <optgroup label={label}>
+                            {options.map(option => (
+                                <option value={option}>{option}</option>
+                            ))}
+                        </optgroup>
+                    );
+                })
+            }
+        </select>
+        <iconify-icon icon="ep:arrow-down-bold" id="arrow-icon"></iconify-icon>
+    </div>
+    {error && <span class="error">{error}</span>}
 </div>
 
 <style lang="scss">
-    #wrapper {
+    #container {
         display: flex;
         flex-direction: column;
         width: 100%;
+        .error {
+            display: flex;
+            justify-content: flex-start;
+            color: #ef4423;
+        }
+    }
+    .wrapper {
+        position: relative;
         select {
             font-size: 20px;
             padding: 15px;
@@ -44,14 +66,25 @@ const { name, dataTitle, dataRequired = true, defaultValue, optionList, error } 
             border: 1px solid var(--fourth-color);
             outline: none;
             transition: 0.2s;
+            appearance: none;
+            width: 100%;
+            background-color: transparent;
             &:focus {
                 border: 1px solid var(--primary);
             }
+            &:focus + #arrow-icon {
+                color: var(--primary);
+            }
         }
-        span {
-            display: flex;
-            justify-content: flex-start;
-            color: #ef4423;
+        #arrow-icon {
+            position: absolute;
+            font-size: 20px;
+            color: var(--fourth-color);
+            right: 10px;
+            top: 50%;
+            translate: 0 -50%;
+            z-index: -1;
+            transition: 0.2s;
         }
     }
 </style>
