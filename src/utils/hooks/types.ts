@@ -6,7 +6,7 @@ type SliderHandlersType = {
 export type SliderControllersType = {
     slideBack: () => void;
     slideForward: () => void;
-    goToSlide: (slideId: number) => void;
+    goToSlide: (slideIdx: number) => void;
 };
 export type SliderHook = {
     currentTranslateX: number;
@@ -14,6 +14,8 @@ export type SliderHook = {
     handler: SliderHandlersType;
     controllers: SliderControllersType;
     idxActiveSlide: number;
+    stopDragAnimation: boolean;
+    freezeSlide: boolean;
 };
 export type ScreenSliderWidthHook = {
     screenRefWidth: number | undefined;

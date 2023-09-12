@@ -14,15 +14,19 @@ export const PRESENTATION_BOX: PresentationBoxProps = {
     cardList: [
         {
             iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+            content: "a",
         },
         {
             iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+            content: "b",
         },
         {
             iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+            content: "c",
         },
         {
             iconPath: "/images/nosotros/ICON_EXPERIENCE.svg",
+            content: "d",
         },
     ],
 };

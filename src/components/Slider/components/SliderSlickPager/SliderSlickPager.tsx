@@ -7,6 +7,7 @@ const SliderSlickPager = ({
     controllers,
     idxActiveSlide,
     darkMode,
+    freezeSlide
 }: SliderSlickPagerProps) => {
     const { slideBack, slideForward, goToSlide } = controllers;
     const darkModeClass = darkMode ? style.secondary : "";
@@ -14,8 +15,7 @@ const SliderSlickPager = ({
         <div className={`${style.container} ${darkModeClass}`}>
             <button
                 className={`${style.slickArrow} ${darkModeClass}`}
-                onClick={slideBack}
-                disabled={idxActiveSlide === 0}
+                onClick={freezeSlide ? () => {} : slideBack}
             >
                 <Icon icon="teenyicons:arrow-left-solid" />
             </button>
@@ -25,14 +25,13 @@ const SliderSlickPager = ({
                         key={idx}
                         className={idx === idxActiveSlide ? style.active : ""}
                     >
-                        <button onClick={() => goToSlide(idx)} />
+                        <button onClick={() => goToSlide(idx + 1)} />
                     </li>
                 ))}
             </ul>
             <button
                 className={`${style.slickArrow} ${darkModeClass}`}
-                onClick={slideForward}
-                disabled={idxActiveSlide === slides.length - 1}
+                onClick={freezeSlide ? () => {} : slideForward}
             >
                 <Icon icon="teenyicons:arrow-right-solid" />
             </button>

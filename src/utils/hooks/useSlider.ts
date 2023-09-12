@@ -7,17 +7,25 @@ const useSlider = (
     listGap: number
 ): SliderHook => {
     //#region States
-    const [idxActiveSlide, setIdxActiveSlide] = useState(0);
+    const [idxActiveSlide, setIdxActiveSlide] = useState(1);
     const [dragging, setDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [endX, setEndX] = useState(0);
-    const [currentTranslateX, setCurrentTranslateX] = useState(0);
-    const [prevTranslate, setPrevTranslate] = useState(0);
+    const [currentTranslateX, setCurrentTranslateX] = useState(
+        -idxActiveSlide * (328 + listGap)
+    );
+    const [prevTranslate, setPrevTranslate] = useState(
+        -idxActiveSlide * (328 + listGap)
+    );
+    const [stopDragAnimation, setStopDragAnimation] = useState<boolean>(false);
+    const [freezeSlide, setFreezeSlide] = useState<boolean>(false);
     //#endregion
     //#region Functions
     const handleTouchStart = ({
         touches,
     }: React.TouchEvent<HTMLDivElement>): void => {
+        setStopDragAnimation(false);
+        setFreezeSlide(false);
         setDragging(true);
         setStartX(touches[0].clientX);
         setEndX(0);
@@ -43,7 +51,6 @@ const useSlider = (
     const handleTouchEnd = (): void => {
         setDragging(false);
         if (!$list.current) return;
-
         const listWidth: number = $list.current.clientWidth;
         const cardWidth: number = $list.current.children[0].clientWidth;
         let newTranslateX: number = currentTranslateX;
@@ -60,44 +67,91 @@ const useSlider = (
         // Decidiendo si hacia adelante o hacia atrás
         newIdxActiveSlide =
             Math[diffMovement > 0 ? "ceil" : "floor"](newIdxActiveSlide);
-        // Revisando si no hay desborde para adelante
-        newIdxActiveSlide =
-            newIdxActiveSlide > listItemsNumber - 1
-                ? listItemsNumber - 1
-                : newIdxActiveSlide;
         // Setteando valores adecuados
         newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
-        setIdxActiveSlide(newIdxActiveSlide);
         setPrevTranslate(newTranslateX);
         setCurrentTranslateX(newTranslateX);
+        temporalFreezeSlide();
+        if (newIdxActiveSlide === 0) {
+            turnAroundSliderLeft();
+            return;
+        }
+        if (newIdxActiveSlide === listItemsNumber - 1) {
+            turnAroundSliderRight();
+            return;
+        }
+        setIdxActiveSlide(newIdxActiveSlide);
     };
-    const slideBack = (): void => {
+    const turnAroundSliderLeft = (): void => {
+        //GNOMO ENCONTRAR LA MANERA DE TENER EL WIDTH DE LA CARD DINÁMICAMENTE DESDE LOS PARÁMETROS DEL HOOK
         if (!$list.current) return;
         const cardWidth: number = $list.current.children[0].clientWidth;
-        const newIdxActiveSlide = idxActiveSlide - 1;
-        const newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
-        setIdxActiveSlide(newIdxActiveSlide);
+        setIdxActiveSlide(listItemsNumber - 2);
+        const newTranslateX: number = -(listItemsNumber - 2) * (cardWidth + listGap);
+        setTimeout(() => {
+            setStopDragAnimation(true);
+            setPrevTranslate(newTranslateX);
+            setCurrentTranslateX(newTranslateX);
+        }, 500);
+    };
+    const turnAroundSliderRight = (): void => {
+        if (!$list.current) return;
+        const cardWidth: number = $list.current.children[0].clientWidth;
+        setIdxActiveSlide(1);
+        const newTranslateX: number = -1 * (cardWidth + listGap);
+        setTimeout(() => {
+            setStopDragAnimation(true);
+            setPrevTranslate(newTranslateX);
+            setCurrentTranslateX(newTranslateX);
+        }, 500);
+    };
+    const temporalFreezeSlide = (): void => {
+        setFreezeSlide(true);
+        setTimeout(() => {
+            setFreezeSlide(false);
+        }, 500);
+    };
+    //#region Funciones de controladores de navegación
+    const slideBack = (): void => {
+        if (!$list.current) return;
+        temporalFreezeSlide();
+        setStopDragAnimation(false);
+        const cardWidth: number = $list.current.children[0].clientWidth;
+        const newIdxActiveSlide: number = idxActiveSlide - 1;
+        const newTranslateX: number = -newIdxActiveSlide * (cardWidth + listGap);
         setPrevTranslate(newTranslateX);
         setCurrentTranslateX(newTranslateX);
+        if (newIdxActiveSlide === 0) {
+            turnAroundSliderLeft();
+            return;
+        }
+        setIdxActiveSlide(newIdxActiveSlide);
     };
     const slideForward = (): void => {
         if (!$list.current) return;
+        temporalFreezeSlide();
+        setStopDragAnimation(false);
         const cardWidth: number = $list.current.children[0].clientWidth;
-        const newIdxActiveSlide = idxActiveSlide + 1;
-        const newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
-        setIdxActiveSlide(newIdxActiveSlide);
+        const newIdxActiveSlide: number = idxActiveSlide + 1;
+        const newTranslateX: number = -newIdxActiveSlide * (cardWidth + listGap);
         setPrevTranslate(newTranslateX);
         setCurrentTranslateX(newTranslateX);
+        if (newIdxActiveSlide === listItemsNumber - 1) {
+            turnAroundSliderRight();
+            return;
+        }
+        setIdxActiveSlide(newIdxActiveSlide);
     };
-    const goToSlide = (idSlide: number): void => {
+    const goToSlide = (slideIdx: number): void => {
         if (!$list.current) return;
         const cardWidth: number = $list.current.children[0].clientWidth;
-        const newIdxActiveSlide = idSlide;
-        const newTranslateX = -newIdxActiveSlide * (cardWidth + listGap);
+        const newIdxActiveSlide: number = slideIdx;
+        const newTranslateX: number = -newIdxActiveSlide * (cardWidth + listGap);
         setIdxActiveSlide(newIdxActiveSlide);
         setPrevTranslate(newTranslateX);
         setCurrentTranslateX(newTranslateX);
     };
+    //#endregion
     return {
         currentTranslateX,
         dragging,
@@ -112,6 +166,8 @@ const useSlider = (
             goToSlide,
         },
         idxActiveSlide,
+        stopDragAnimation,
+        freezeSlide,
     };
 };
 

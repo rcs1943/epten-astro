@@ -10,18 +10,21 @@ function Slider<I>({
     slides,
     renderSlides,
     adjustCardWidthResponsive,
-    darkMode
+    darkMode,
 }: SliderProps<I>) {
     const isMobile = getIsMobile();
     const $screen = useRef<HTMLDivElement>(null);
     const $list = useRef<HTMLDivElement>(null);
+    const newSlides = [slides[slides.length - 1], ...slides, slides[0]];
     const {
         currentTranslateX,
         dragging,
         handler,
         controllers,
         idxActiveSlide,
-    } = useSlider($list, slides.length, CARD_LIST_GAP);
+        stopDragAnimation,
+        freezeSlide,
+    } = useSlider($list, newSlides.length, CARD_LIST_GAP);
     useEffect(() => {
         const handleResize = () =>
             adjustCardWidthResponsive($screen.current?.clientWidth);
@@ -41,23 +44,27 @@ function Slider<I>({
                         transform: isMobile
                             ? `translateX(${currentTranslateX}px)`
                             : "none",
-                        transition: dragging
-                            ? "transform ease-out 0.25s"
-                            : "transform ease-out 0.45s",
+                        transition: stopDragAnimation
+                            ? "none"
+                            : dragging
+                                ? "transform ease-out 0.25s"
+                                : "transform ease-out 0.45s",
+                        pointerEvents: freezeSlide ? "none" : "all",
                     }}
                     onTouchStart={handler.touchStart}
                     onTouchMove={handler.touchMove}
                     onTouchEnd={handler.touchEnd}
                 >
-                    {slides.map(renderSlides)}
+                    {newSlides.map(renderSlides)}
                 </div>
             </div>
             {isMobile && (
                 <SliderSlickPager
                     slides={slides}
                     controllers={controllers}
-                    idxActiveSlide={idxActiveSlide}
+                    idxActiveSlide={idxActiveSlide - 1}
                     darkMode={darkMode}
+                    freezeSlide={freezeSlide}
                 />
             )}
         </article>

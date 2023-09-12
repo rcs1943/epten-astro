@@ -13,11 +13,11 @@ const PresentationCardList = ({ presentationCards }: PresentationCardListProps) 
             slides={presentationCards}
             adjustCardWidthResponsive={adjustCardWidth}
             darkMode={true}
-            renderSlides={presentationCard => {
+            renderSlides={(presentationCard, idx) => {
                 const { iconPath, content } = presentationCard;
                 return (
                     <AboutCard
-                        key={iconPath}
+                        key={idx}
                         iconPath={iconPath}
                         content={content}
                         mobileWidth={screenRefWidth}

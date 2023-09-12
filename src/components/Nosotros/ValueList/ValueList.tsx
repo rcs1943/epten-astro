@@ -12,11 +12,11 @@ const ValueList = ({ values }: ValueListProps) => {
         <Slider<Value>
             slides={values}
             adjustCardWidthResponsive={adjustCardWidth}
-            renderSlides={value => {
+            renderSlides={(value, idx) => {
                 const { title, content, icon } = value;
                 return (
                     <ValueCard
-                        key={title}
+                        key={idx}
                         icon={icon}
                         content={content}
                         title={title}

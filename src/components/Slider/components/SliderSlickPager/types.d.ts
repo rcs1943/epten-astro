@@ -5,4 +5,5 @@ export type SliderSlickPagerProps = {
     controllers: SliderControllersType;
     idxActiveSlide: number;
     darkMode?: boolean;
+    freezeSlide: boolean;
 }
