@@ -5,7 +5,7 @@ import { getIsMobile } from "../../../utils/deviceSize";
 function ValueCard({ icon, title, content, mobileWidth }: ValueCardProps) {
     const isMobile = getIsMobile();
     return (
-        <div className={style.container} style={{width: isMobile ? `${mobileWidth}px` : undefined}}>
+        <div className={style.container}>
             <img src={icon} alt="Ícono Valor" />
             <h4>{title}</h4>
             <p>{content}</p>

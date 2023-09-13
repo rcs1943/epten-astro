@@ -23,7 +23,7 @@
         width: 70%;
     }
     @media (max-width: 650px) {
-        width: unset;
+        width: calc(100vw - 3rem);
     }
     h4 {
         color: var(--tertiary);

@@ -15,7 +15,7 @@ function Slider<I>({
     const isMobile = getIsMobile();
     const $screen = useRef<HTMLDivElement>(null);
     const $list = useRef<HTMLDivElement>(null);
-    const newSlides = [slides[slides.length - 1], ...slides, slides[0]];
+    const newSlides = isMobile ? [slides[slides.length - 1], ...slides, slides[0]] : slides;
     const {
         currentTranslateX,
         dragging,
@@ -24,7 +24,13 @@ function Slider<I>({
         idxActiveSlide,
         stopDragAnimation,
         freezeSlide,
-    } = useSlider($list, newSlides.length, CARD_LIST_GAP);
+    } = useSlider(
+        $list,
+        newSlides.length,
+        CARD_LIST_GAP,
+        $screen.current?.clientWidth,
+        true
+    );
     useEffect(() => {
         const handleResize = () =>
             adjustCardWidthResponsive($screen.current?.clientWidth);
@@ -47,8 +53,8 @@ function Slider<I>({
                         transition: stopDragAnimation
                             ? "none"
                             : dragging
-                                ? "transform ease-out 0.25s"
-                                : "transform ease-out 0.45s",
+                            ? "transform ease-out 0.25s"
+                            : "transform ease-out 0.45s",
                         pointerEvents: freezeSlide ? "none" : "all",
                     }}
                     onTouchStart={handler.touchStart}
