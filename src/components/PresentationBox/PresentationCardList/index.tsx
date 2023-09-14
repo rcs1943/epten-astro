@@ -1,4 +1,4 @@
-import Slider from "../../Slider/Slider";
+import Slider from "../../Slider/Slider/Slider";
 import type { PresentationCard, PresentationCardListProps } from "./types";
 import AboutCard from "../../Cards/AboutCard";
 import { useState } from "react";

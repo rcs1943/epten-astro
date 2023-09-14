@@ -1,17 +1,12 @@
-import type { Value, ValueListProps } from "./types";
-import Slider from "../../Slider/Slider";
+import type { ValueListProps } from "./types";
 import ValueCard from "../../Cards/ValueCard/ValueCard";
-import { useState } from "react";
+import Slider from "../../Slider/Slider/Slider";
+import type { ValueCardProps } from "../../Cards/ValueCard/types";
 
 const ValueList = ({ values }: ValueListProps) => {
-    const [screenRefWidth, setScreenRefWidth] = useState<number | undefined>();
-    const adjustCardWidth = (screenWidth?: number) => {
-        setScreenRefWidth(screenWidth);
-    };
     return (
-        <Slider<Value>
+        <Slider<ValueCardProps>
             slides={values}
-            adjustCardWidthResponsive={adjustCardWidth}
             renderSlides={(value, idx) => {
                 const { title, content, icon } = value;
                 return (
@@ -20,7 +15,6 @@ const ValueList = ({ values }: ValueListProps) => {
                         icon={icon}
                         content={content}
                         title={title}
-                        mobileWidth={screenRefWidth}
                     />
                 );
             }}

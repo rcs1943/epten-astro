@@ -1,8 +1,38 @@
 import type { CourseCategoryCardProps } from "../../components/CourseCategoryList/CourseCategoryList.astro";
+import type { HeroSlideProps } from "../../components/Index/HeroSlider/components/HeroSlide/types";
 import type { InfoSchemaProps } from "../../components/InfoSchema/InfoSchema.astro";
 import type { PresentationBoxProps } from "../../components/PresentationBox/PresentationBox.astro";
 import type { PromoCoursesBoxProps } from "../../components/PromoCourseBox/PromoCourseBox.astro";
 
+export const HERO_SLIDER: HeroSlideProps[] = [
+    {
+        title: "INSCRÍBETE AHORA Y TRANSFORMA TU FUTURO",
+        subtitle: "Subtítulo Subtítulo Subtítulo Subtítulo",
+        button: {
+            content: "Inscríbete aquí",
+            link: "#",
+        },
+        imgPath: "/images/index/CAROUSEL_1.jpg",
+    },
+    {
+        title: "AVANZA EN TU PROFESIÓN CON NUESTRA AMPLIA GAMA DE CURSOS",
+        subtitle: "Subtítulo Subtítulo Subtítulo Subtítulo",
+        button: {
+            content: "Descubre nuestros cursos",
+            link: "#",
+        },
+        imgPath: "/images/index/CAROUSEL_2.jpg",
+    },
+    {
+        title: "DESCUBRE QUIÉNES SOMOS Y POR QUÉ INSPIRAMOS A TUS LOGROS",
+        subtitle: "Subtítulo Subtítulo Subtítulo Subtítulo",
+        button: {
+            content: "Conócenos aquí",
+            link: "#",
+        },
+        imgPath: "/images/index/CAROUSEL_3.jpg",
+    },
+];
 export const PROMO_COURSES: Omit<PromoCoursesBoxProps, "idx">[] = [
     {
         courseName: "EXCEL BÁSICO",

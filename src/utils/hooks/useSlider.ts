@@ -20,20 +20,18 @@ const useSlider = (
     const [freezeSlide, setFreezeSlide] = useState<boolean>(false);
     //#endregion
     useEffect(() => {
-        console.log(Boolean($list.current), Boolean(cardWidth))
-        // slideForward();
-        if (!isAutomatic) return;
-        const automaticSlide = setInterval(slideForward, 1000);
-        return () => clearInterval(automaticSlide)
-    }, [cardWidth]);
-    useEffect(() => {
+        if (!cardWidth) return;
+        console.log(cardWidth)
         setCurrentTranslateX(-idxActiveSlide * (cardWidth + listGap));
         setPrevTranslate(-idxActiveSlide * (cardWidth + listGap));
     }, [cardWidth]);
+    //Effect para slides automáticos. cardWidth como prop porque slideForward() requiere que exista.
+    useEffect(() => {
+        if (!isAutomatic) return;
+        const automaticSlideIntervalId = setInterval(slideForward, 3000);
+        return () => clearInterval(automaticSlideIntervalId)
+    }, [cardWidth, idxActiveSlide]);
     //#region Functions
-    const automaticSlide = () => {
-        setInterval(slideForward, 1000);
-    }
     const handleTouchStart = ({
         touches,
     }: React.TouchEvent<HTMLDivElement>): void => {
@@ -138,7 +136,6 @@ const useSlider = (
     };
     const slideForward = (): void => {
         if (!$list.current || !cardWidth) return;
-        console.log(idxActiveSlide)
         temporalFreezeSlide();
         setStopDragAnimation(false);
         const newIdxActiveSlide: number = idxActiveSlide + 1;
@@ -150,7 +147,6 @@ const useSlider = (
             return;
         }
         setIdxActiveSlide(newIdxActiveSlide);
-        console.log("hola")
     };
     const goToSlide = (slideIdx: number): void => {
         if (!$list.current || !cardWidth) return;

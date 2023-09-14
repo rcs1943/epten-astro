@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import PresentationBox from "../components/PresentationBox/PresentationBox.astro";
 import InfoSchema from "../components/InfoSchema/InfoSchema.astro";
 import {
+    HERO_SLIDER,
     CATEGORY_CARDS,
     NEXT_STEP_INFO,
     INDEX_PRESENTATION_BOX,
@@ -11,12 +12,14 @@ import {
 import Divider from "../components/Divider/Divider.astro";
 import PromoSection from "../components/Index/PromoSection.astro";
 import CategoriesSection from "../components/Index/CategoriesSection.astro";
+import HeroSlider from "../components/Index/HeroSlider/HeroSlider.astro";
 ---
 
 <Layout>
+    <HeroSlider heroSlides={HERO_SLIDER} />
     <PromoSection promoCourses={PROMO_COURSES} />
     <CategoriesSection categoryCards={CATEGORY_CARDS} />
-    <PresentationBox presentationBoxProps={INDEX_PRESENTATION_BOX} />
+    <!-- <PresentationBox presentationBoxProps={INDEX_PRESENTATION_BOX} /> -->
     <Divider pixels="100px" />
     <InfoSchema infoSchemaProps={{...NEXT_STEP_INFO, linebreak: true}} />
     <Divider pixels="100px" />

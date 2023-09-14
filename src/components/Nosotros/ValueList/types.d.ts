@@ -1,8 +1,5 @@
-export interface Value {
-    icon: string;
-    title: string;
-    content: string;
-}
+import type { ValueCardProps } from "../../Cards/ValueCard/types";
+
 export type ValueListProps = {
-    values: ValuesProps[];
+    values: ValueCardProps[];
 };

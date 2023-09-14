@@ -1,21 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import type { SliderProps } from "./types";
-import useSlider from "../../utils/hooks/useSlider";
+import type { SliderProps } from "../types";
+import useSlider from "../../../utils/hooks/useSlider";
 import SliderSlickPager from "./components/SliderSlickPager/SliderSlickPager";
 import style from "./styles.module.scss";
-import { CARD_LIST_GAP } from "../../utils/constants/slider";
-import { getIsMobile } from "../../utils/deviceSize";
+import { CARD_LIST_GAP } from "../../../utils/constants/slider";
+import { getIsMobile } from "../../../utils/deviceSize";
 
-function Slider<I>({
-    slides,
-    renderSlides,
-    adjustCardWidthResponsive,
-    darkMode,
-}: SliderProps<I>) {
+function Slider<I>({ slides, renderSlides, darkMode }: SliderProps<I>) {
     const isMobile = getIsMobile();
     const $screen = useRef<HTMLDivElement>(null);
     const $list = useRef<HTMLDivElement>(null);
     const newSlides = isMobile ? [slides[slides.length - 1], ...slides, slides[0]] : slides;
+    const [cardWidth, setCardWidth] = useState<number>();
     const {
         currentTranslateX,
         dragging,
@@ -24,21 +20,13 @@ function Slider<I>({
         idxActiveSlide,
         stopDragAnimation,
         freezeSlide,
-    } = useSlider(
-        $list,
-        newSlides.length,
-        CARD_LIST_GAP,
-        $screen.current?.clientWidth,
-        true
-    );
+    } = useSlider($list, newSlides.length, CARD_LIST_GAP, cardWidth, false);
     useEffect(() => {
-        const handleResize = () =>
-            adjustCardWidthResponsive($screen.current?.clientWidth);
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+        if (!$screen.current) return;
+        const test = () => setCardWidth($screen.current?.clientWidth);
+        window.addEventListener("resize", test)
+        test()
+        return () => window.removeEventListener("resize", test)
     }, []);
     return (
         <article className={style.container}>

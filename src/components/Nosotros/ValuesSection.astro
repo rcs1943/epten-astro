@@ -1,9 +1,9 @@
 ---
+import type { ValueCardProps } from "../Cards/ValueCard/types";
 import MiniTitleHeader from "../TitleHeaders/MiniTitleHeader.astro";
 import ValueList from "./ValueList/ValueList";
-import type { Value } from "./ValueList/types";
 interface Props {
-    valueCards: Value[];
+    valueCards: ValueCardProps[];
 }
 const { valueCards } = Astro.props as Props;
 ---
@@ -22,7 +22,6 @@ const { valueCards } = Astro.props as Props;
         gap: 70px;
         margin: 120px 0 100px;
         @media (max-width: 650px) {
-            // width: calc(100% - 2rem);
             width: calc(100vw - 3rem);
             margin: 80px 0;
             gap: 50px;
