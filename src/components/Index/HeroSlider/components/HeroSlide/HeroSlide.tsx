@@ -20,7 +20,6 @@ const HeroSlide = ({ title, subtitle, button, imgPath }: HeroSlideProps) => {
                 <div className={style.blue}/>
             </div>
         </div>
-        // <div className={style.test}></div>
     );
 };
 

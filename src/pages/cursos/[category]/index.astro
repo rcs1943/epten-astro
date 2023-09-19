@@ -1,12 +1,12 @@
 ---
 import CourseCategoryLayout from "../../../layouts/CourseCategoryLayout.astro";
-import { getLocalDataById } from "../../../services/fetchLocalData";
+import { findObjInArrById } from "../../../services/fetchLocalData";
 import categories from "../../../data/categories.json";
 
 const { category } = Astro.params;
 if (!category) return;
 
-const courseCategory = getLocalDataById(categories, category);
+const courseCategory = findObjInArrById(categories, category);
 
 export function getStaticPaths() {
     return categories.map(category => ({

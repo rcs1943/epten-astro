@@ -5,7 +5,7 @@ import CustomDropDown from "../../CustomDropDown/CustomDropDown.astro";
 import InputButton from "./InputButton.astro";
 ---
 
-<form id="container">
+<form id="form-container">
     <div>
         <CustomTextInput {...CONTACT_FORM_INPUT_PROPS.USER_NAMES} />
         <CustomTextInput {...CONTACT_FORM_INPUT_PROPS.USER_SURNAMES} />
@@ -18,11 +18,11 @@ import InputButton from "./InputButton.astro";
     <InputButton />
 </form>
 
-<style lang="scss">
-    #container {
+<style lang="scss" is:global>
+    #form-container {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 35px;
         & > div:not(:nth-child(3)) {
             display: flex;
             gap: 30px;
@@ -32,5 +32,23 @@ import InputButton from "./InputButton.astro";
                 flex-direction: column;
             }
         }
+        span {
+            position: absolute;
+            bottom: -20px;
+            left: 5px;
+            display: flex;
+            justify-content: flex-start;
+            color: #ef4423;
+            font-size: 14px;
+            @media (max-width: 650px) {
+                bottom: -18px;
+                font-size: 12px;
+            }
+            &.none {
+                display: none;
+            }
+        }
     }
 </style>
+
+<script src="./formValidations.ts"></script>

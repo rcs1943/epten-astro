@@ -6,31 +6,33 @@ const useSlider = (
     listItemsNumber: number,
     listGap: number,
     cardWidth?: number,
-    isAutomatic?: boolean
+    isAutomatic: boolean = false,
+    slideAnimationTime: number = 450
 ): SliderHook => {
     //#region States
     const [idxActiveSlide, setIdxActiveSlide] = useState(1);
     const [dragging, setDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [endX, setEndX] = useState(0);
+    const [startY, setStartY] = useState(0);
     const [currentTranslateX, setCurrentTranslateX] = useState(0);
     const [prevTranslate, setPrevTranslate] = useState(0);
+    const [freezeSlide, setFreezeSlide] = useState<boolean>(false);
+    const [automaticSlide, setAutomaticSlide] = useState(isAutomatic);
     //Valor inicial true para que no esté la animación al renderizar componente
     const [stopDragAnimation, setStopDragAnimation] = useState<boolean>(true);
-    const [freezeSlide, setFreezeSlide] = useState<boolean>(false);
     //#endregion
     useEffect(() => {
         if (!cardWidth) return;
-        console.log(cardWidth)
         setCurrentTranslateX(-idxActiveSlide * (cardWidth + listGap));
         setPrevTranslate(-idxActiveSlide * (cardWidth + listGap));
     }, [cardWidth]);
     //Effect para slides automáticos. cardWidth como prop porque slideForward() requiere que exista.
     useEffect(() => {
-        if (!isAutomatic) return;
-        const automaticSlideIntervalId = setInterval(slideForward, 3000);
-        return () => clearInterval(automaticSlideIntervalId)
-    }, [cardWidth, idxActiveSlide]);
+        if (!automaticSlide) return;
+        const automaticSlideIntervalId = setInterval(slideForward, 5000);
+        return () => clearInterval(automaticSlideIntervalId);
+    }, [cardWidth, idxActiveSlide, automaticSlide]);
     //#region Functions
     const handleTouchStart = ({
         touches,
@@ -39,14 +41,33 @@ const useSlider = (
         setFreezeSlide(false);
         setDragging(true);
         setStartX(touches[0].clientX);
+        setStartY(touches[0].clientY);
         setEndX(0);
+    };
+    const limitVerticalMove = (
+        originX: number,
+        originY: number,
+        targetX: number,
+        targetY: number
+    ): boolean => {
+        // console.log("adios")
+        const dx = originX - targetX;
+        const dy = originY - targetY;
+        let theta = Math.atan2(dy, dx);
+        theta *= 180 / Math.PI;
+        const angle = Math.abs(theta);
+        console.log(angle);
+        if (angle > 55 && angle < 125) return true;
+        return false;
     };
     const handleTouchMove = ({
         touches,
     }: React.TouchEvent<HTMLDivElement>): void => {
         if (!dragging || !$list.current || !cardWidth) return;
         const currentX = touches[0].clientX,
+            currentY = touches[0].clientY,
             deltaX = currentX - startX;
+        if (limitVerticalMove(startX, startY, currentX, currentY)) return;
         setEndX(currentX);
         const newCurrentTranslateX = prevTranslate + deltaX;
         const listWidth: number = $list.current.clientWidth;
@@ -60,7 +81,7 @@ const useSlider = (
     };
     const handleTouchEnd = (): void => {
         setDragging(false);
-        if (!$list.current || !cardWidth) return;
+        if (!$list.current || !cardWidth || prevTranslate === currentTranslateX) return;
         const listWidth: number = $list.current.clientWidth;
         let newTranslateX: number = currentTranslateX;
         //#region Colocando límites
@@ -100,7 +121,7 @@ const useSlider = (
             setStopDragAnimation(true);
             setPrevTranslate(newTranslateX);
             setCurrentTranslateX(newTranslateX);
-        }, 500);
+        }, slideAnimationTime + 50);
     };
     const turnAroundSliderRight = (): void => {
         if (!$list.current || !cardWidth) return;
@@ -110,13 +131,13 @@ const useSlider = (
             setStopDragAnimation(true);
             setPrevTranslate(newTranslateX);
             setCurrentTranslateX(newTranslateX);
-        }, 500);
+        }, slideAnimationTime + 50);
     };
     const temporalFreezeSlide = (): void => {
         setFreezeSlide(true);
         setTimeout(() => {
             setFreezeSlide(false);
-        }, 500);
+        }, slideAnimationTime + 50);
     };
     //#region Funciones de controladores de navegación
     const slideBack = (): void => {
@@ -139,7 +160,8 @@ const useSlider = (
         temporalFreezeSlide();
         setStopDragAnimation(false);
         const newIdxActiveSlide: number = idxActiveSlide + 1;
-        const newTranslateX: number = -newIdxActiveSlide * (cardWidth + listGap);
+        const newTranslateX: number =
+            -newIdxActiveSlide * (cardWidth + listGap);
         setPrevTranslate(newTranslateX);
         setCurrentTranslateX(newTranslateX);
         if (newIdxActiveSlide === listItemsNumber - 1) {
@@ -158,6 +180,8 @@ const useSlider = (
         setPrevTranslate(newTranslateX);
         setCurrentTranslateX(newTranslateX);
     };
+    const pauseAutoSlide = () => setAutomaticSlide(false);
+    const playAutoSlide = () => setAutomaticSlide(true);
     //#endregion
     return {
         currentTranslateX,
@@ -171,10 +195,13 @@ const useSlider = (
             slideBack,
             slideForward,
             goToSlide,
+            pauseAutoSlide,
+            playAutoSlide,
         },
         idxActiveSlide,
         stopDragAnimation,
         freezeSlide,
+        automaticSlide,
     };
 };
 

@@ -1,13 +1,13 @@
 export const CONTACT_FORM_INPUT_PROPS = {
     USER_NAMES: {
-        name: "Nombres",
+        name: "names",
         placeholder: "Nombres*",
         dataTitle: "El campo es requerido.",
         dataRegex: "Ingrese un valor válido.",
         dataPattern: "^[A-Za-zÑñÁáÉéÍíÓóÚúÜüs]+$",
     },
     USER_SURNAMES: {
-        name: "Apellidos",
+        name: "surnames",
         placeholder: "Apellidos*",
         dataTitle: "El campo es requerido.",
         maxLength: 50,
@@ -15,7 +15,7 @@ export const CONTACT_FORM_INPUT_PROPS = {
         dataPattern: "^[A-Za-zÑñÁáÉéÍíÓóÚúÜüs]+$",
     },
     USER_EMAIL: {
-        name: "Email",
+        name: "email",
         placeholder: "Correo electrónico*",
         dataTitle: "El campo es requerido.",
         maxLength: 50,
@@ -23,7 +23,7 @@ export const CONTACT_FORM_INPUT_PROPS = {
         dataPattern: "^(w+[/./-]?){1,}@[a-z]+[/.]w{2,}$",
     },
     USER_PHONE: {
-        name: "Teléfono",
+        name: "phone",
         placeholder: "Teléfono / Celular*",
         dataTitle: "El campo es requerido.",
         maxlength: "9",
@@ -31,7 +31,7 @@ export const CONTACT_FORM_INPUT_PROPS = {
         dataPattern: "^[0-9]{9}$",
     },
     COURSES_DROPDOWN: {
-        name: "Curso de interés",
+        name: "courses",
         dataTitle: "El campo es requerido",
         defaultValue: "Curso de interés",
         optionList: [

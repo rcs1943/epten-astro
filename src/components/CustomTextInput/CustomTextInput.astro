@@ -6,7 +6,6 @@ interface Props {
     dataRequired?: boolean;
     dataRegex: string;
     dataPattern: string;
-    error?: string;
 }
 const {
     name,
@@ -15,7 +14,6 @@ const {
     dataRequired = true,
     dataTitle,
     placeholder,
-    error,
 } = Astro.props as Props;
 ---
 
@@ -29,11 +27,12 @@ const {
         data-regex={dataRegex}
         data-pattern={dataPattern}
     />
-    {error && <span>{error}</span>}
+    <!-- {error && <span>{error}</span>} -->
 </div>
 
-<style lang="scss">
+<style lang="scss" is:global>
     #wrapper {
+        position: relative;
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -52,10 +51,6 @@ const {
                 border: 1px solid var(--primary);
             }
         }
-        span {
-            display: flex;
-            justify-content: flex-start;
-            color: #ef4423;
-        }
+        
     }
 </style>

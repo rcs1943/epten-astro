@@ -10,7 +10,7 @@ export const HERO_SLIDER: HeroSlideProps[] = [
         subtitle: "Subtítulo Subtítulo Subtítulo Subtítulo",
         button: {
             content: "Inscríbete aquí",
-            link: "#",
+            link: "/inscripcion",
         },
         imgPath: "/images/index/CAROUSEL_1.jpg",
     },
@@ -19,7 +19,7 @@ export const HERO_SLIDER: HeroSlideProps[] = [
         subtitle: "Subtítulo Subtítulo Subtítulo Subtítulo",
         button: {
             content: "Descubre nuestros cursos",
-            link: "#",
+            link: "/cursos",
         },
         imgPath: "/images/index/CAROUSEL_2.jpg",
     },
@@ -28,7 +28,7 @@ export const HERO_SLIDER: HeroSlideProps[] = [
         subtitle: "Subtítulo Subtítulo Subtítulo Subtítulo",
         button: {
             content: "Conócenos aquí",
-            link: "#",
+            link: "/nosotros",
         },
         imgPath: "/images/index/CAROUSEL_3.jpg",
     },

@@ -11,8 +11,10 @@
         flex-direction: column;
         text-align: center;
         padding: 30px 0;
-        width: 100%;
-        min-width: 325px;
+        width: calc(100vw - 8rem);
+    }
+    @media (max-width: 450px) {
+        width: calc(100vw - 2rem);
     }
     img {
         width: 80px;

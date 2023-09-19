@@ -1,17 +1,11 @@
-import Slider from "../../Slider/Slider/Slider";
+import AboutCard from "../../../Cards/AboutCard";
+import Slider from "../../../Slider/Slider/Slider";
 import type { PresentationCard, PresentationCardListProps } from "./types";
-import AboutCard from "../../Cards/AboutCard";
-import { useState } from "react";
 
 const PresentationCardList = ({ presentationCards }: PresentationCardListProps) => {
-    const [screenRefWidth, setScreenRefWidth] = useState<number | undefined>();
-    const adjustCardWidth = (screenWidth?: number) => {
-        setScreenRefWidth(screenWidth);
-    };
     return (
         <Slider<PresentationCard>
             slides={presentationCards}
-            adjustCardWidthResponsive={adjustCardWidth}
             darkMode={true}
             renderSlides={(presentationCard, idx) => {
                 const { iconPath, content } = presentationCard;
@@ -20,7 +14,6 @@ const PresentationCardList = ({ presentationCards }: PresentationCardListProps) 
                         key={idx}
                         iconPath={iconPath}
                         content={content}
-                        mobileWidth={screenRefWidth}
                     />
                 );
             }}

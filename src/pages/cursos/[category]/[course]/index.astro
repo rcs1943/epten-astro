@@ -1,12 +1,12 @@
 ---
-import { getLocalDataById } from "../../../../services/fetchLocalData";
+import { findObjInArrById } from "../../../../services/fetchLocalData";
 import CourseLayout from "../../../../layouts/CourseLayout.astro";
 import courses from "../../../../data/courses.json";
 
 const { course } = Astro.params;
 if (!course) return;
 
-const courseData = getLocalDataById(courses, course);
+const courseData = findObjInArrById(courses, course);
 
 export function getStaticPaths() {
     return courses.map(course => ({

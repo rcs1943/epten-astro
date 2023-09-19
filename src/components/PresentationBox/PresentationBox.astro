@@ -1,5 +1,5 @@
 ---
-import PresentationCardList from "./PresentationCardList";
+import PresentationCardList from "./components/PresentationCardList";
 export interface PresentationBoxProps {
     title?: string;
     content: string;
@@ -20,10 +20,12 @@ const { title, content, cardList, button } = presentationBoxProps;
 ---
 
 <section class="presentation-box">
-    <article class="wrapper">
+    <article class="content">
         {title && <h2>{title}</h2>}
         <p>{content}</p>
-        <PresentationCardList presentationCards={cardList} client:only />
+        <div class="cards-wrapper">
+            <PresentationCardList presentationCards={cardList} client:only />
+        </div>
         {
             button && (
                 <div class="link-btn-wrapper">
@@ -43,8 +45,9 @@ const { title, content, cardList, button } = presentationBoxProps;
         background-color: var(--primary);
         padding: 50px 0;
     }
-    .wrapper {
+    .content {
         display: flex;
+        align-items: center;
         flex-direction: column;
         width: 100%;
         max-width: 960px;
@@ -77,11 +80,26 @@ const { title, content, cardList, button } = presentationBoxProps;
             }
         }
     }
+    .cards-wrapper {
+        width: 100%;
+        @media (max-width: 650px) {
+            width: calc(100vw - 18rem);
+        }
+        @media (max-width: 600px) {
+            width: calc(100vw - 14rem);
+        }
+        @media (max-width: 550px) {
+            width: calc(100vw - 10rem);
+        }
+        @media (max-width: 450px) {
+            width: calc(100vw - 3rem);
+        }
+    }
     .link-btn-wrapper {
         display: flex;
         justify-content: center;
         @media (max-width: 650px) {
-            margin-top: 30px; 
+            margin-top: 30px;
         }
         a {
             text-decoration: none;

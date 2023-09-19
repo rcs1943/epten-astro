@@ -20,7 +20,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<div id="container">
+<div id="custom-drop-down">
     <div class="wrapper">
         <select name={name} data-title={dataTitle} data-required={dataRequired}>
             <option disabled selected>
@@ -43,8 +43,8 @@ const {
     {error && <span class="error">{error}</span>}
 </div>
 
-<style lang="scss">
-    #container {
+<style lang="scss" is:global>
+    #custom-drop-down {
         display: flex;
         flex-direction: column;
         width: 100%;

@@ -29,7 +29,7 @@ function Slider<I>({ slides, renderSlides, darkMode }: SliderProps<I>) {
         return () => window.removeEventListener("resize", test)
     }, []);
     return (
-        <article className={style.container}>
+        <div className={style.container}>
             <div className={style.screen} ref={$screen}>
                 <div
                     className={style.list}
@@ -61,7 +61,7 @@ function Slider<I>({ slides, renderSlides, darkMode }: SliderProps<I>) {
                     freezeSlide={freezeSlide}
                 />
             )}
-        </article>
+        </div>
     );
 }
 

@@ -1,31 +1,34 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
+import type { SliderControllerComponentTypes } from "./types";
+import style from "./styles.module.scss";
 
-const SliderController = () => {
+const SliderControllerComponent = ({
+    controllers,
+    freezeSlide,
+    automaticSlide,
+}: SliderControllerComponentTypes) => {
+    const { slideBack, slideForward, pauseAutoSlide, playAutoSlide } =
+        controllers;
     return (
-        <div className="buttons">
-            <button
-                className="carousel-button prev"
-                data-carousel-button="prev"
-            >
-                <Icon icon="material-symbols:arrow-right-alt" />
+        <div className={style.container}>
+            <button className={style.prev} onClick={freezeSlide ? () => {} : slideBack}>
+                <Icon icon="material-symbols:arrow-left-alt" />
             </button>
-            <button
-                className="carousel-button reproduction active"
-                id="pause-btn"
-            >
-                <Icon icon="ic:baseline-pause" />
-            </button>
-            <button className="carousel-button reproduction" id="play-btn">
-                <Icon icon="material-symbols:play-arrow" />
-            </button>
-            <button
-                className="carousel-button next"
-                data-carousel-button="next"
-            >
+            {automaticSlide && (
+                <button className={style.reproduction} onClick={pauseAutoSlide}>
+                    <Icon icon="ic:baseline-pause" />
+                </button>
+            )}
+            {!automaticSlide && (
+                <button className={style.reproduction} onClick={playAutoSlide}>
+                    <Icon icon="material-symbols:play-arrow" />
+                </button>
+            )}
+            <button className={style.next} onClick={freezeSlide ? () => {} : slideForward}>
                 <Icon icon="material-symbols:arrow-right-alt" />
             </button>
         </div>
     );
 };
 
-export default SliderController;
+export default SliderControllerComponent;
