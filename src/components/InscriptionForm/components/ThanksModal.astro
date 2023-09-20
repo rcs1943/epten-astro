@@ -7,7 +7,7 @@
         <h2>¡Gracias por enviarnos tus datos!</h2>
         <p>Nos pondremos en contacto contigo en breve</p>
         <div class="home-btn">
-            <a href="../">VOLVER AL INICIO</a>
+            <a href="/">VOLVER AL INICIO</a>
         </div>
     </article>
 </section>
@@ -23,8 +23,8 @@
         display: grid;
         place-items: center;
         background-color: #00000095;
-        // visibility: hidden;
-        // opacity: 0;
+        visibility: hidden;
+        opacity: 0;
         transition: 0.3s;
         &.open {
             visibility: visible;
@@ -37,6 +37,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        gap: 20px;
         background-color: var(--white);
         padding: 100px;
         border-radius: 10px;
@@ -54,7 +55,6 @@
         }
         img {
             width: 120px;
-            margin-bottom: 20px;
             translate: 15px 0;
             @media (max-width: 500px) {
                 width: 90px;
@@ -98,7 +98,6 @@
                 font-weight: 600;
                 border: 3px solid var(--primary);
                 transition: 0.2s;
-                margin-top: 15px;
                 user-select: none;
                 &:hover {
                     color: var(--fifth-color);

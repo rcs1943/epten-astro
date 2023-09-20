@@ -1,9 +1,7 @@
 import { helpHttp } from "../../../services/helpHttp";
 export function formValidations() {
-    const $inputs: NodeListOf<HTMLInputElement> =
-        document.querySelectorAll("[data-required]");
-    const $select: HTMLSelectElement =
-        document.querySelector("#custom-drop-down")!;
+    const $inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("[data-required]");
+    const $select: HTMLSelectElement = document.querySelector("#custom-drop-down")!;
     let isValidated = true;
     $inputs.forEach(input => {
         const $span = document.createElement("span");
@@ -50,6 +48,7 @@ export function formValidations() {
         e.preventDefault();
         const $modal = document.querySelector("#thanks-modal");
         const b = document.body;
+        console.log(b)
         let formData!: unknown[];
         let errorCounter = 0;
         $inputs.forEach(input => {
@@ -57,9 +56,7 @@ export function formValidations() {
                 document.getElementById(input.name)!.classList.remove("none");
                 isValidated = false;
             }
-            if (
-                !document.getElementById(input.name)!.classList.contains("none")
-            ) {
+            if (!document.getElementById(input.name)!.classList.contains("none")) {
                 errorCounter++;
             }
             formData = { ...formData, [input.name]: input.value };
@@ -68,9 +65,11 @@ export function formValidations() {
             isValidated = true;
         }
         //https://formsubmit.co/ajax/ventas@epten.edu.pe
+        //https://formsubmit.co/ajax/kerwints6@gmail.com
         if (isValidated === true) {
+            console.log("kge");
             helpHttp()
-                .post("https://formsubmit.co/ajax/kerwints6@gmail.com", {
+                .post("", {
                     body: formData,
                     headers: {
                         "Content-Type": "application/json",
@@ -79,8 +78,8 @@ export function formValidations() {
                 })
                 .then(res => {
                     if (!$modal) return;
-                    $modal.classList.add("opened");
-                    b.classList.add("opened");
+                    $modal.classList.add("open");
+                    b.classList.add("opened-modal");
                 });
         }
     });

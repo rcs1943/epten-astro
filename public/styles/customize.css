@@ -45,3 +45,6 @@ p {
 img {
     max-width: 100%;
 }
+body.opened-modal {
+    overflow-y: hidden;
+}

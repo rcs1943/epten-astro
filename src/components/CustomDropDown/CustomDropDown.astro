@@ -20,40 +20,37 @@ const {
 } = Astro.props as Props;
 ---
 
-<div id="custom-drop-down">
-    <div class="wrapper">
-        <select name={name} data-title={dataTitle} data-required={dataRequired}>
-            <option disabled selected>
-                {defaultValue}
-            </option>
-            {
-                optionList.map(({ label, options }) => {
-                    return (
-                        <optgroup label={label}>
-                            {options.map(option => (
-                                <option value={option}>{option}</option>
-                            ))}
-                        </optgroup>
-                    );
-                })
-            }
-        </select>
-        <iconify-icon icon="ep:arrow-down-bold" id="arrow-icon"></iconify-icon>
-    </div>
-    {error && <span class="error">{error}</span>}
+<div class="wrapper">
+    <select id="custom-drop-down" name={name} data-title={dataTitle} data-required={dataRequired}>
+        <option disabled selected value="">
+            {defaultValue}
+        </option>
+        {
+            optionList.map(({ label, options }) => {
+                return (
+                    <optgroup label={label}>
+                        {options.map(option => (
+                            <option value={option}>{option}</option>
+                        ))}
+                    </optgroup>
+                );
+            })
+        }
+    </select>
+    <iconify-icon icon="ep:arrow-down-bold" id="arrow-icon"></iconify-icon>
 </div>
 
 <style lang="scss" is:global>
-    #custom-drop-down {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        .error {
-            display: flex;
-            justify-content: flex-start;
-            color: #ef4423;
-        }
-    }
+    // #custom-drop-down {
+    //     display: flex;
+    //     flex-direction: column;
+    //     width: 100%;
+    //     .error {
+    //         display: flex;
+    //         justify-content: flex-start;
+    //         color: #ef4423;
+    //     }
+    // }
     .wrapper {
         position: relative;
         select {

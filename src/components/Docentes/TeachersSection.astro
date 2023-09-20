@@ -1,0 +1,29 @@
+---
+import { type TeacherCardProps } from "./TeacherCard.astro";
+import TeacherCard from "./TeacherCard.astro";
+interface Props {
+    teacherCards: TeacherCardProps[];
+}
+const { teacherCards } = Astro.props as Props;
+---
+
+<section>
+    <article class="cards-wrapper">
+        {teacherCards.map(teacherCard => <TeacherCard teacherCard={teacherCard} />)}
+    </article>
+</section>
+
+<style lang="scss">
+    section {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        .cards-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            width: calc(100% - 2rem);
+            max-width: 960px;
+        }
+    }
+</style>

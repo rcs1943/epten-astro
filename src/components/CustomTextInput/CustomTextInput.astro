@@ -6,6 +6,7 @@ interface Props {
     dataRequired?: boolean;
     dataRegex: string;
     dataPattern: string;
+    maxLength?: number;
 }
 const {
     name,
@@ -14,7 +15,9 @@ const {
     dataRequired = true,
     dataTitle,
     placeholder,
+    maxLength
 } = Astro.props as Props;
+console.log(dataPattern)
 ---
 
 <div id="wrapper">
@@ -26,6 +29,7 @@ const {
         data-required={dataRequired}
         data-regex={dataRegex}
         data-pattern={dataPattern}
+        maxlength={maxLength}
     />
     <!-- {error && <span>{error}</span>} -->
 </div>
